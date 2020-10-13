@@ -3,4 +3,12 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="indigo">#034078</color>
+    <color name="offwhite">#F6F7EB</color>
+    <color name="cgblue">#1282A2</color>
+    <color name="mud_yellow">#FCCA46</color>
+    <color name="charcoal">#233D4D</color>
+    <color name="prussianBlue">#102B3F</color>
+    <color name="sapphire">#22577A</color>
+    <color name="blueMunsell">#348AA7</color>
 </resources>

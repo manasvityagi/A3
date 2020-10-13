@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".QuizLength">
 
-    android:background="@color/offwhite"
-    tools:context=".MainActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="275dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="225dp"
         android:background="@color/prussianBlue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,39 +19,37 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="90dp"
-            android:text="Quiz Up"
             android:fontFamily="@font/play_fair_regular"
+            android:text="Category"
             android:textColor="@color/mud_yellow"
-            android:textSize="65dp"
             android:textFontWeight="800"
-            android:textStyle="italic"
-            />
+            android:textSize="65dp"
+            android:textStyle="italic" />
     </FrameLayout>
 
     <Button
-        android:id="@+id/start_quiz_btn"
-        android:layout_width="175dp"
+        android:id="@+id/full_quiz"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="Start Quiz"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded_corners"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:text="Full Quiz - 35 Questions"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <Button
-        android:id="@+id/my_record"
-        android:layout_width="175dp"
+        android:id="@+id/mini_quiz"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="My Record"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corners"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:text="Mini Quiz - 10 Questions"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_quiz_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/full_quiz" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
