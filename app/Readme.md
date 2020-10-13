@@ -14,7 +14,7 @@ Number of Activities would be Login, Chose name, Chose topic, Play and Score.
 3.	Your description of any initial implementation you have done for the application.
 4.	Your thoughts on some of the complications in developing the application.
 Login and registration could be difficult as I have not done it before.
-Uploading the questions in JSON format via mobile is a bit difficult.
+Uploading the quesions in JSON format via mobile is a bit difficult.
 5.	Your thoughts on acquiring knowledge and skills in order to complete the application—what do you need to learn in order to develop the application.
 6.	Your thoughts on any easy Android/Kotlin/Java concepts that you can use for your mobile application.
 7.	Your thoughts on any difficult Android/Kotlin/Java concepts that you may need to learn to complete the application.
