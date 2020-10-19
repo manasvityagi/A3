@@ -25,6 +25,8 @@ public class ChoseCategory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category);
 
+
+        //Multi,div,add, sub
         btnCatAll = findViewById(R.id.cat_1);
         btnCat2 = findViewById(R.id.cat_2);
         btnCat3 = findViewById(R.id.cat_3);
