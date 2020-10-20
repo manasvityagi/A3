@@ -24,7 +24,6 @@ public class ChoseCategory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category);
 
-
         //Multi,div,add, sub
         btnCat1 = findViewById(R.id.cat_1);
         btnCat2 = findViewById(R.id.cat_2);
@@ -81,7 +80,6 @@ public class ChoseCategory extends AppCompatActivity {
                 navigate(ChoseCategory);
             }
         });
-
 
     }
 

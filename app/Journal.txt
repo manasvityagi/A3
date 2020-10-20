@@ -1,0 +1,7 @@
+20.10.2020
+
+Make a Quiz DB
+Develop recycler view for category style.
+
+Read from JSON, save to SQLite
+or Vice Versa
