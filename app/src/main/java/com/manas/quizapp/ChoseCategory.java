@@ -32,7 +32,7 @@ public class ChoseCategory extends AppCompatActivity {
         btnCat3 = findViewById(R.id.cat_3);
         btnCat4 = findViewById(R.id.cat_4);
         btnCat5 = findViewById(R.id.cat_5);
-        btnCat6 = findViewById(R.id.cat_6);
+
 
         btnCat1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,13 +75,6 @@ public class ChoseCategory extends AppCompatActivity {
         });
 
 
-        btnCat6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ChoseCategory = "6";
-                navigate(ChoseCategory);
-            }
-        });
 
 
         setRecycler();

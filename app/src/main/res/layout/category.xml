@@ -67,16 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cat_4" />
 
-    <Button
-        android:id="@+id/cat_6"
-        android:layout_width="275dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_corners"
-        android:text="Category 5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cat_5" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoryRecyclerList"
@@ -84,7 +75,7 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cat_6"
+        android:layout_marginTop="475dp"
 
         />
 
