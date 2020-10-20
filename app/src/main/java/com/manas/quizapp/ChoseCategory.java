@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ChoseCategory extends AppCompatActivity {
 
@@ -81,6 +83,32 @@ public class ChoseCategory extends AppCompatActivity {
             }
         });
 
+
+        setRecycler();
+
+    }
+
+    private void setRecycler() {
+        CategoryItemModel[] myListData = new CategoryItemModel[] {
+                new CategoryItemModel("Email", android.R.drawable.ic_dialog_email),
+                new CategoryItemModel("Info", android.R.drawable.ic_dialog_info),
+                new CategoryItemModel("Delete", android.R.drawable.ic_delete),
+                new CategoryItemModel("Dialer", android.R.drawable.ic_dialog_dialer),
+                new CategoryItemModel("Alert", android.R.drawable.ic_dialog_alert),
+                new CategoryItemModel("Map", android.R.drawable.ic_dialog_map),
+                new CategoryItemModel("Email", android.R.drawable.ic_dialog_email),
+                new CategoryItemModel("Info", android.R.drawable.ic_dialog_info),
+                new CategoryItemModel("Delete", android.R.drawable.ic_delete),
+                new CategoryItemModel("Dialer", android.R.drawable.ic_dialog_dialer),
+                new CategoryItemModel("Alert", android.R.drawable.ic_dialog_alert),
+                new CategoryItemModel("Map", android.R.drawable.ic_dialog_map),
+        };
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.categoryRecyclerList);
+        ListAdapter adapter = new ListAdapter(myListData);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
     }
 
     private void navigate(String choseCategory) {
