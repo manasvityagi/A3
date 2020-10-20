@@ -90,7 +90,7 @@ public class ChoseCategory extends AppCompatActivity {
 
     private void setRecycler() {
         CategoryItemModel[] myListData = new CategoryItemModel[] {
-                new CategoryItemModel("Email", android.R.drawable.ic_dialog_email),
+                new CategoryItemModel("Email Address", android.R.drawable.ic_dialog_email),
                 new CategoryItemModel("Info", android.R.drawable.ic_dialog_info),
                 new CategoryItemModel("Delete", android.R.drawable.ic_delete),
                 new CategoryItemModel("Dialer", android.R.drawable.ic_dialog_dialer),
