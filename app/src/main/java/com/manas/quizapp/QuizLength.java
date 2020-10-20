@@ -25,9 +25,8 @@ public class QuizLength extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(QuizLength.this, QuizActivity.class);
-                intent.putExtra("quiz_length", FULL_QUIZ_LENGTH);
+                intent.putExtra("quiz_length", MINI_QUIZ_LENGTH);
                 startActivity(intent);
-
             }
         });
 
@@ -35,7 +34,7 @@ public class QuizLength extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(QuizLength.this, QuizActivity.class);
-                intent.putExtra("quiz_length", MINI_QUIZ_LENGTH);
+                intent.putExtra("quiz_length", FULL_QUIZ_LENGTH);
                 startActivity(intent);
             }
         });
