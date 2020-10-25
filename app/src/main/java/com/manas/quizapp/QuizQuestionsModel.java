@@ -4,16 +4,8 @@ package com.manas.quizapp;
 
 public class QuizQuestionsModel {
     String QuestionStatement;
-    String Option1;
-    String Option2;
-    String Option3;
-    String Option4;
-    String Option5;
-    String Option6;
-    Integer isPicture;
-    String correctOptionNumber;
 
-    public QuizQuestionsModel(String questionStatement, String option1, String option2, String option3, String option4, String option5, String option6, Integer isPicture, String correctOptionNumber) {
+    public QuizQuestionsModel(String questionStatement, String option1, String option2, String option3, String option4, String option5, String option6, String picture_url, String correctOptionNumber, String question_category, Double user_rating) {
         QuestionStatement = questionStatement;
         Option1 = option1;
         Option2 = option2;
@@ -21,9 +13,22 @@ public class QuizQuestionsModel {
         Option4 = option4;
         Option5 = option5;
         Option6 = option6;
-        this.isPicture = isPicture;
+        this.picture_url = picture_url;
         this.correctOptionNumber = correctOptionNumber;
+        this.question_category = question_category;
+        this.user_rating = user_rating;
     }
+
+    String Option1;
+    String Option2;
+    String Option3;
+    String Option4;
+    String Option5;
+    String Option6;
+    String picture_url;
+    String correctOptionNumber;
+    String question_category;
+    Double user_rating;
 
     public QuizQuestionsModel() {
 
@@ -86,13 +91,14 @@ public class QuizQuestionsModel {
         Option6 = option6;
     }
 
-    public Integer getIsPicture() {
-        return isPicture;
+    public String getPicture_url() {
+        return picture_url;
     }
 
-    public void setIsPicture(Integer isPicture) {
-        this.isPicture = isPicture;
+    public void setPicture_url(String picture_url) {
+        this.picture_url = picture_url;
     }
+
 
     public String getCorrectOptionNumber() {
         return correctOptionNumber;

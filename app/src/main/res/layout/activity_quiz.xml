@@ -21,10 +21,10 @@
             android:layout_marginStart="125dp"
             android:layout_marginTop="1dp"
             android:fontFamily="@font/play_fair_regular"
-            android:text="Quiz"
+            android:text="@string/quiz"
             android:textColor="@color/mud_yellow"
             android:textFontWeight="800"
-            android:textSize="65dp"
+            android:textSize="65sp"
             android:textStyle="italic" />
     </FrameLayout>
 
@@ -41,16 +41,13 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/QuestionStatement"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
-        android:text="Question: The Toyota Ipsum, Picnic, SportsVan or Avensis Verso is a seven-seater
-        multi-purpose vehicle produced by the Japanese automaker Toyota from 1995 to 2009. ...
-       sold at Toyota Corolla Store.
-"
-        android:textSize="18dp"
+        android:text="@string/question_text"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
