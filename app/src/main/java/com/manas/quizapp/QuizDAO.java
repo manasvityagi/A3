@@ -86,7 +86,7 @@ public class QuizDAO extends SQLiteOpenHelper {
                 questions.setOption4(cursor.getString(4));
                 questions.setOption5(cursor.getString(5));
                 questions.setOption6(cursor.getString(6));
-                questions.setIsPicture(Integer.parseInt(cursor.getString(7)));
+                //questions.setIsPicture(Integer.parseInt(cursor.getString(7)));
                 questions.setCorrectOptionNumber(cursor.getString(8));
 
                 // Adding questions to list
