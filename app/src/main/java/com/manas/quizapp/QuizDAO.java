@@ -42,7 +42,7 @@ public class QuizDAO extends SQLiteOpenHelper {
                 + OP6 + " text, "
                 + "isPicture INTEGER, "
                 + correctOptionNumber + " text);";
-
+Log.e("sql",sql);
         sqLiteDatabase.execSQL(sql);
     }
 
