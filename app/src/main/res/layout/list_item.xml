@@ -3,20 +3,19 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeightLarge"
+    android:layout_marginVertical="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     android:background="@drawable/list_item_style"
-    android:layout_marginRight="15dp"
-    android:layout_marginLeft="15dp"
-    android:layout_marginVertical="15dp"
-    >
-
+    android:textAlignment="center">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:contentDescription="Icon" />
@@ -25,12 +24,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
         android:layout_toEndOf="@id/imageView"
-        android:layout_toRightOf="@id/imageView"
         android:gravity="center_vertical"
-        android:textColor="@color/white"
         android:textAllCaps="true"
-
-        android:textSize="25sp"/>
+        android:textColor="@color/prussianBlue"
+        android:textSize="25sp" />
 
 </RelativeLayout>  

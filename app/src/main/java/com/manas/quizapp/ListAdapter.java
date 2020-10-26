@@ -1,6 +1,7 @@
 package com.manas.quizapp;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +11,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.manas.quizapp.ChoseCategory;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private CategoryItemModel[] listdata;
-
+    private final Context context = null;
     // RecyclerView recyclerView;
     public ListAdapter(CategoryItemModel[] listdata) {
         this.listdata = listdata;
@@ -30,22 +35,49 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ListAdapter.ViewHolder holder, int position) {
         final CategoryItemModel myListData = listdata[position];
         holder.textView.setText(listdata[position].getDescription());
         holder.imageView.setImageResource(listdata[position].getImgId());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "clicked on item: " + myListData.getDescription(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(view.getContext(), "clicked on item: " + myListData.getDescription(), Toast.LENGTH_LONG).show();
+                Context context = view.getContext();
 
+                Intent intent = new Intent(context, QuizLength.class);
+                intent.putExtra("category", myListData.getDescription());
+                context.startActivity(intent);
             }
         });
     }
 
-//    private void navigate(String choseCategory) {
-//        Intent i = new Intent(ChoseCategory.this, QuizLength.class);
-//        startActivity(i);
+//    @Override
+//    public void onBindViewHolder(@NonNull @NotNull ListAdapter.ViewHolder holder, int position) {
+//        final CategoryItemModel myListData = listdata[position];
+//        holder.textView.setText(listdata[position].getDescription());
+//        holder.imageView.setImageResource(listdata[position].getImgId());
+//        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(view.getContext(), "clicked on item: " + myListData.getDescription(), Toast.LENGTH_LONG).show();
+//
+//            }
+//        });
+//    }
+
+//    @Override
+//    public void onBindViewHolder(ViewHolder holder, int position) {
+//        final CategoryItemModel myListData = listdata[position];
+//        holder.textView.setText(listdata[position].getDescription());
+//        holder.imageView.setImageResource(listdata[position].getImgId());
+//        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(view.getContext(), "clicked on item: " + myListData.getDescription(), Toast.LENGTH_LONG).show();
+//
+//            }
+//        });
 //    }
 
 

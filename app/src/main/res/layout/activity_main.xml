@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@color/offwhite"
+    android:background="@color/white"
+    android:tint="#55ff0000"
     tools:context=".MainActivity">
 
     <FrameLayout

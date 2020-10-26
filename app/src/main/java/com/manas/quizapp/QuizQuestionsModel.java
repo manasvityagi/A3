@@ -34,7 +34,6 @@ public class QuizQuestionsModel {
 
     }
 
-
     public String getQuestionStatement() {
         return QuestionStatement;
     }

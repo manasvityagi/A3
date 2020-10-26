@@ -68,7 +68,7 @@ public class QuizDAO extends SQLiteOpenHelper {
     }
 
     // code to get all contacts in a list view
-    public List<QuizQuestionsModel> getAllQuestions() {
+    public List<QuizQuestionsModel> getQuestions(String category, Integer limit) {
         List<QuizQuestionsModel> questionList = new ArrayList<QuizQuestionsModel>();
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE;
