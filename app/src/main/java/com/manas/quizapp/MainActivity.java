@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 print_json();
-                Log.e("app", getJsonFromFile());
+                getJsonFromFile();
                 Intent i = new Intent(MainActivity.this, ChoseCategory.class);
                 startActivity(i);
             }
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         return " ";
     }
 
-     String getJsonFromAssets(String fileName) {
+    String getJsonFromAssets(String fileName) {
         String jsonString;
         try {
 
@@ -81,11 +82,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     String getJsonFromFile() {
-        String jsonFileString = getJsonFromAssets( "questions.json");
-        Log.i("data", jsonFileString);
-
+        String jsonFileString = getJsonFromAssets("questions.json");
         Gson gson = new Gson();
-        HashMap<String, String> json = gson.fromJson(jsonFileString, HashMap.class);
+        QuizQuestionsModel[] arrQuestions = gson.fromJson(jsonFileString, QuizQuestionsModel[].class);
+        Log.e("quiz", "------------");
+        for (int i = 0; i < arrQuestions.length; i++) {
+            Log.e("quiz", arrQuestions[i].toString());
+        }
         return jsonFileString.toString();
     }
 

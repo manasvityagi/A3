@@ -3,101 +3,91 @@ package com.manas.quizapp;
 
 
 public class QuizQuestionsModel {
-    String QuestionStatement;
-
-    public QuizQuestionsModel(String questionStatement, String option1, String option2, String option3, String option4, String option5, String option6, String picture_url, String correctOptionNumber, String question_category, Double user_rating) {
-        QuestionStatement = questionStatement;
-        Option1 = option1;
-        Option2 = option2;
-        Option3 = option3;
-        Option4 = option4;
-        Option5 = option5;
-        Option6 = option6;
-        this.picture_url = picture_url;
-        this.correctOptionNumber = correctOptionNumber;
-        this.question_category = question_category;
-        this.user_rating = user_rating;
-    }
-
-    String Option1;
-    String Option2;
-    String Option3;
-    String Option4;
-    String Option5;
-    String Option6;
-    String picture_url;
-    String correctOptionNumber;
-    String question_category;
-    Double user_rating;
+    public String option1;
+    public String option2;
+    public String option3;
+    public String option4;
+    public String option5;
+    public String option6;
+    public String questionStatement;
+    public String correctOptionNumber;
+    public String pictureUrl;
+    public String questionCategory;
+    public Double userRating;
 
     public QuizQuestionsModel() {
-
     }
 
-    public String getQuestionStatement() {
-        return QuestionStatement;
+    public QuizQuestionsModel(String option1, String option2, String option3, String option4, String option5, String option6, String questionStatement, String correctOptionNumber, String pictureUrl, String questionCategory, Double userRating) {
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
+        this.option4 = option4;
+        this.option5 = option5;
+        this.option6 = option6;
+        this.questionStatement = questionStatement;
+        this.correctOptionNumber = correctOptionNumber;
+        this.pictureUrl = pictureUrl;
+        this.questionCategory = questionCategory;
+        this.userRating = userRating;
     }
 
-    public void setQuestionStatement(String questionStatement) {
-        QuestionStatement = questionStatement;
-    }
 
     public String getOption1() {
-        return Option1;
+        return option1;
     }
 
     public void setOption1(String option1) {
-        Option1 = option1;
+        this.option1 = option1;
     }
 
     public String getOption2() {
-        return Option2;
+        return option2;
     }
 
     public void setOption2(String option2) {
-        Option2 = option2;
+        this.option2 = option2;
     }
 
     public String getOption3() {
-        return Option3;
+        return option3;
     }
 
     public void setOption3(String option3) {
-        Option3 = option3;
+        this.option3 = option3;
     }
 
     public String getOption4() {
-        return Option4;
+        return option4;
     }
 
     public void setOption4(String option4) {
-        Option4 = option4;
+        this.option4 = option4;
     }
 
     public String getOption5() {
-        return Option5;
+        return option5;
     }
 
     public void setOption5(String option5) {
-        Option5 = option5;
+        this.option5 = option5;
     }
 
     public String getOption6() {
-        return Option6;
+        return option6;
     }
 
     public void setOption6(String option6) {
-        Option6 = option6;
+        this.option6 = option6;
     }
 
-    public String getPicture_url() {
-        return picture_url;
+    public String getQuestionStatement() {
+        return questionStatement;
     }
 
-    public void setPicture_url(String picture_url) {
-        this.picture_url = picture_url;
+    public void setQuestionStatement(String questionStatement) {
+        this.questionStatement = questionStatement;
     }
-
 
     public String getCorrectOptionNumber() {
         return correctOptionNumber;
@@ -107,6 +97,29 @@ public class QuizQuestionsModel {
         this.correctOptionNumber = correctOptionNumber;
     }
 
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
+
+    public String getQuestionCategory() {
+        return questionCategory;
+    }
+
+    public void setQuestionCategory(String questionCategory) {
+        this.questionCategory = questionCategory;
+    }
+
+    public Double getUserRating() {
+        return userRating;
+    }
+
+    public void setUserRating(Double userRating) {
+        this.userRating = userRating;
+    }
 
 
 }
