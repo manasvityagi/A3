@@ -13,7 +13,6 @@ import java.util.List;
 public class QuizDAO extends SQLiteOpenHelper {
 
     public final static String DATAFILE_NAME = "quiz.db";
-
     public final static String TABLE = "quiz";
     public final static String QUESTION_STATEMENT = "QUESTION_STATEMENT";
     public final static String OP1 = "OPTION1";
@@ -22,7 +21,6 @@ public class QuizDAO extends SQLiteOpenHelper {
     public final static String OP4 = "OPTION4";
     public final static String OP5 = "OPTION5";
     public final static String OP6 = "OPTION6";
-
     public final static String correctOptionNumber = "correctOptionNumber";
 
 
@@ -42,7 +40,7 @@ public class QuizDAO extends SQLiteOpenHelper {
                 + OP6 + " text, "
                 + "isPicture INTEGER, "
                 + correctOptionNumber + " text);";
-Log.e("sql",sql);
+        Log.e("sql", sql);
         sqLiteDatabase.execSQL(sql);
     }
 
@@ -62,7 +60,7 @@ Log.e("sql",sql);
 
             insertQuery = insertQuery.replace("XXX", String.valueOf(i));
             db.execSQL(insertQuery);
-            Log.e("app",insertQuery);
+            Log.e("app", insertQuery);
         }
         db.close();
     }

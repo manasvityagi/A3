@@ -29,3 +29,18 @@ Uploading the questions in JSON format via mobile is a bit difficult.
 7.	Your thoughts on any difficult Android/Kotlin/Java concepts that you may need to learn to complete the application.
 8.	Your thoughts on the achievability of the application in the time frame.
 9.	Your thoughts on the risks you face in developing the application in the time frame available.
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // TODO: Populate a Random database, via a json file.
+    // TODO: Json is to be objectified in Question Model Class.
+    // TODO: Create an array of objects
+    // TODO: Insert the objects in a db
+    // TODO: Read the db, create the array of objects again
+    // TODO: Inflate the object to a question view
+    // TODO: Based on submission add or subtract the final score
+    // TODO: Show the final score to user
+    // TODO: Save the score
+    // TODO: View My record to display the total of all records: Total Attempted, total correct, % Percentage
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
