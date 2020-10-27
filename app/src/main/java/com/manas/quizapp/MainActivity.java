@@ -10,8 +10,17 @@ import android.widget.Button;
 
 import com.google.gson.Gson;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.lang.reflect.Type;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
-Button startQuizBtn;
+    Button startQuizBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +31,14 @@ Button startQuizBtn;
             @Override
             public void onClick(View v) {
                 print_json();
+                Log.e("app", getJsonFromFile());
                 Intent i = new Intent(MainActivity.this, ChoseCategory.class);
                 startActivity(i);
             }
         });
     }
 
-    void print_json(){
+    void print_json() {
         QuizQuestionsModel temp_question_obj = new QuizQuestionsModel("This is the Question", "Wrong option 1",
                 "Wrong option 2",
                 "Wrong option 3",
@@ -40,7 +50,64 @@ Button startQuizBtn;
         );
         Gson gson = new Gson();
         String jsonInString = gson.toJson(temp_question_obj);
-        Log.e("quiz",jsonInString);
+        Log.e("quiz", jsonInString);
 
     }
+
+    String getJsonFromCloud() {
+
+        return " ";
+    }
+
+     String getJsonFromAssets(String fileName) {
+        String jsonString;
+        try {
+
+            InputStream is = MainActivity.this.getAssets().open(fileName);
+
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            jsonString = new String(buffer, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return jsonString;
+    }
+
+
+    String getJsonFromFile() {
+        String jsonFileString = getJsonFromAssets( "questions.json");
+        Log.i("data", jsonFileString);
+
+        Gson gson = new Gson();
+        HashMap<String, String> json = gson.fromJson(jsonFileString, HashMap.class);
+        return jsonFileString.toString();
+    }
+
+    // TODO: Populate a database, via a json file.
+    void readJsonDB() {
+
+    }
+
+    // TODO: Create an array of objects
+    void createQuestionArray() {
+
+    }
+
+    // TODO: Insert the objects in a db
+    void insertArrayToDB() {
+
+    }
+
+    // TODO: Read the db, create the array of objects again
+    void getListOfQuestionObjects() {
+
+    }
+
+
 }
