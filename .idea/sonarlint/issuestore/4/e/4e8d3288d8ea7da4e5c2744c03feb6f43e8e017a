@@ -1,0 +1,8 @@
+
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(ä¥Éïûÿÿÿÿ
+G
+java:S1153"1Directly append the argument of String.valueOf().(úŠ¯¥
+Q	java:S125"<This block of commented-out lines of code should be removed.(’¨è
+Q	java:S125"<This block of commented-out lines of code should be removed.(œå×À
+K
+java:S1144"5Remove this unused private "initiateDatabase" method.(»¡™²
