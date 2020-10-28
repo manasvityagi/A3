@@ -62,9 +62,9 @@ public class QuizDAO extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        Log.e("app", "Created Quiz DB");
+
         String sql = "CREATE TABLE " + TABLE + values_base;
-        Log.e("sql", sql);
+//        Log.e("sql", sql);
         sqLiteDatabase.execSQL(sql);
 
     }
@@ -95,7 +95,7 @@ public class QuizDAO extends SQLiteOpenHelper {
             insertQuery = insertQuery.replace("CONX", q.getCorrectOptionNumber());
             insertQuery = insertQuery.replace("URL", q.getPictureUrl());
             insertQuery = insertQuery.replace("QCX", q.getQuestionCategory());
-            Log.e("app", insertQuery);
+            //Log.e("app", insertQuery);
             db.execSQL(insertQuery);
         }
 

@@ -23,6 +23,7 @@ public class QuizActivity extends AppCompatActivity {
 
         Toast.makeText(this, categoryPassedToThis+" : "+ String.valueOf(quizLength) , Toast.LENGTH_LONG).show();
 
+
     }
 
     private void initiateDatabase() {
