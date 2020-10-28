@@ -18,9 +18,8 @@ public class QuizActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String categoryPassedToThis = getIntent().getStringExtra("category");
         Integer quizLength = bundle.getInt("quiz_length");
-        Log.e("app",String.valueOf(quizLength));
+        Log.e("app",String.valueOf(quizLength) + " categgory "+ categoryPassedToThis);
         setContentView(R.layout.activity_quiz);
-
         Toast.makeText(this, categoryPassedToThis+" : "+ String.valueOf(quizLength) , Toast.LENGTH_LONG).show();
 
 
