@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -31,85 +32,44 @@ public class MainActivity extends AppCompatActivity {
         startQuizBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Log.e("quiz", "-----------+----------");
-                //print_json();
-                getJsonFromFile();
+                populateDBfromJson();
                 Intent i = new Intent(MainActivity.this, ChoseCategory.class);
-                //startActivity(i);
+                startActivity(i);
             }
         });
     }
 
-    void print_json() {
-        QuizQuestionsModel temp_question_obj = new QuizQuestionsModel("This is the Question", "Wrong option 1",
-                "Wrong option 2",
-                "Wrong option 3",
-                "Wrong option 4",
-                "Correct option 5",
-                "Correct option 6",
-                "https://i.imgur.com/eaJOzqt.jpeg",
-                "Correct option 6", "courtesy", 4.5
-        );
-        Gson gson = new Gson();
-        String jsonInString = gson.toJson(temp_question_obj);
-        Log.e("quiz", jsonInString);
-
-    }
-
-    String getJsonFromCloud() {
-
-        return " ";
-    }
-
-    String getJsonFromAssets(String fileName) {
-        String jsonString;
-        try {
-
-            InputStream is = MainActivity.this.getAssets().open(fileName);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-
-            jsonString = new String(buffer, "UTF-8");
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        return jsonString;
-    }
-
-
-    JsonObject[] getJsonFromFile() {
+    JsonObject[] populateDBfromJson() {
         String jsonFileString = getJsonFromAssets("questions.json");
         Gson gson = new Gson();
         JsonObject[] arrQuestions = gson.fromJson(jsonFileString, JsonObject[].class);
 
+        ArrayList<QuizQuestionsModel> qArray =  new ArrayList<QuizQuestionsModel>();;
+        QuizDAO helper = new QuizDAO(getApplicationContext());
         for (JsonObject arrQuestion : arrQuestions) {
-
             QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
-            Log.e("quiz", "------------");
             Log.e("quiz", String.valueOf(arrQuestion.get("Option1")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option1")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option2")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option3")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option4")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option5")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option6")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("QuestionStatement")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("correctOptionNumber")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("question_category")));
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("user_rating")));
-            QuizDAO helper = new QuizDAO(getApplicationContext());
-            helper.insertQuestionObject(tempQuestion);
-            //tempQuestion.setOption1(arrQuestions[i].getOption1());
-
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option1")).replace("\"",""));
+            tempQuestion.setOption2(String.valueOf(arrQuestion.get("Option2")).replace("\"",""));
+            tempQuestion.setOption3(String.valueOf(arrQuestion.get("Option3")).replace("\"",""));
+            tempQuestion.setOption4(String.valueOf(arrQuestion.get("Option4")).replace("\"",""));
+            tempQuestion.setOption5(String.valueOf(arrQuestion.get("Option5")).replace("\"",""));
+            tempQuestion.setOption6(String.valueOf(arrQuestion.get("Option6")).replace("\"",""));
+            tempQuestion.setQuestionStatement(String.valueOf(arrQuestion.get("QuestionStatement")).replace("\"",""));
+            tempQuestion.setCorrectOptionNumber(String.valueOf(arrQuestion.get("correctOptionNumber")).replace("\"",""));
+            tempQuestion.setPictureUrl(String.valueOf(arrQuestion.get("picture_url")).replace("\"",""));
+            tempQuestion.setQuestionCategory(String.valueOf(arrQuestion.get("question_category")).replace("\"",""));
+            tempQuestion.setUserRating(Double.valueOf(String.valueOf(arrQuestion.get("user_rating"))));
+            qArray.add(tempQuestion);
         }
+
+        helper.insertQuestionObject(qArray);
         return arrQuestions;
     }
 
+    String getJsonFromCloud() {
+        return " ";
+    }
 
     // TODO: Populate a database, via a json file.
     void readJsonDB() {
@@ -134,6 +94,25 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Read the db, create the array of objects again
     void getListOfQuestionObjects() {
 
+    }
+
+    String getJsonFromAssets(String fileName) {
+        String jsonString;
+        try {
+
+            InputStream is = MainActivity.this.getAssets().open(fileName);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            jsonString = new String(buffer, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return jsonString;
     }
 
 

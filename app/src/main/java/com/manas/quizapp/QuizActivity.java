@@ -28,8 +28,8 @@ public class QuizActivity extends AppCompatActivity {
     private void initiateDatabase() {
 
         // Open database handler using our own specialized CustomerDatabaseHelper
-        QuizDAO helper = new QuizDAO(getApplicationContext());
+       // QuizDAO helper = new QuizDAO(getApplicationContext());
        // List<QuizQuestionsModel> questions = helper.getQuestions("",35);
-        helper.populateRandomQuestions();
+       // helper.populateRandomQuestions();
     }
 }
