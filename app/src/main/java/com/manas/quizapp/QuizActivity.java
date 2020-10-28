@@ -14,7 +14,7 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initiateDatabase();
+        //initiateDatabase();
         Bundle bundle = getIntent().getExtras();
         String categoryPassedToThis = getIntent().getStringExtra("category");
         Integer quizLength = bundle.getInt("quiz_length");
@@ -29,7 +29,7 @@ public class QuizActivity extends AppCompatActivity {
 
         // Open database handler using our own specialized CustomerDatabaseHelper
         QuizDAO helper = new QuizDAO(getApplicationContext());
-        List<QuizQuestionsModel> questions = helper.getQuestions("",35);
+       // List<QuizQuestionsModel> questions = helper.getQuestions("",35);
         helper.populateRandomQuestions();
     }
 }

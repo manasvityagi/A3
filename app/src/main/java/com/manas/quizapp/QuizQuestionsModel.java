@@ -2,7 +2,9 @@ package com.manas.quizapp;
 
 
 
+
 public class QuizQuestionsModel {
+
     public String option1;
     public String option2;
     public String option3;
@@ -15,10 +17,9 @@ public class QuizQuestionsModel {
     public String questionCategory;
     public Double userRating;
 
-    public QuizQuestionsModel() {
-    }
 
     public QuizQuestionsModel(String option1, String option2, String option3, String option4, String option5, String option6, String questionStatement, String correctOptionNumber, String pictureUrl, String questionCategory, Double userRating) {
+        super();
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
@@ -32,6 +33,9 @@ public class QuizQuestionsModel {
         this.userRating = userRating;
     }
 
+    public QuizQuestionsModel() {
+
+    }
 
     public String getOption1() {
         return option1;
@@ -121,5 +125,20 @@ public class QuizQuestionsModel {
         this.userRating = userRating;
     }
 
-
+    @Override
+    public String toString() {
+        return "QuizQuestionsModel{" +
+                "option1='" + option1 + '\'' +
+                ", option2='" + option2 + '\'' +
+                ", option3='" + option3 + '\'' +
+                ", option4='" + option4 + '\'' +
+                ", option5='" + option5 + '\'' +
+                ", option6='" + option6 + '\'' +
+                ", questionStatement='" + questionStatement + '\'' +
+                ", correctOptionNumber='" + correctOptionNumber + '\'' +
+                ", pictureUrl='" + pictureUrl + '\'' +
+                ", questionCategory='" + questionCategory + '\'' +
+                ", userRating=" + userRating +
+                '}';
+    }
 }

@@ -31,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
         startQuizBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                print_json();
+
+                Log.e("quiz", "-----------+----------");
+                //print_json();
                 getJsonFromFile();
                 Intent i = new Intent(MainActivity.this, ChoseCategory.class);
-                startActivity(i);
+                //startActivity(i);
             }
         });
     }
@@ -65,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             InputStream is = MainActivity.this.getAssets().open(fileName);
-
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -81,16 +82,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    String getJsonFromFile() {
+    JsonObject[] getJsonFromFile() {
         String jsonFileString = getJsonFromAssets("questions.json");
         Gson gson = new Gson();
-        QuizQuestionsModel[] arrQuestions = gson.fromJson(jsonFileString, QuizQuestionsModel[].class);
-        Log.e("quiz", "------------");
-        for (int i = 0; i < arrQuestions.length; i++) {
-            Log.e("quiz", arrQuestions[i].toString());
+        JsonObject[] arrQuestions = gson.fromJson(jsonFileString, JsonObject[].class);
+
+        for (JsonObject arrQuestion : arrQuestions) {
+
+            QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
+            Log.e("quiz", "------------");
+            Log.e("quiz", String.valueOf(arrQuestion.get("Option1")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option1")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option2")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option3")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option4")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option5")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option6")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("QuestionStatement")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("correctOptionNumber")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("question_category")));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("user_rating")));
+            QuizDAO helper = new QuizDAO(getApplicationContext());
+            helper.insertQuestionObject(tempQuestion);
+            //tempQuestion.setOption1(arrQuestions[i].getOption1());
+
         }
-        return jsonFileString.toString();
+        return arrQuestions;
     }
+
 
     // TODO: Populate a database, via a json file.
     void readJsonDB() {
@@ -102,10 +121,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // TODO: Insert the objects in a db
-    void insertArrayToDB() {
-
-    }
+//    // TODO: Insert the objects in a db
+//    void insertArrayToDB() {
+//        QuizQuestionsModel[] arr = getJsonFromFile();
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
+//            tempQuestion.setOption1(arr[i].getOption1());
+//        }
+//    }
 
     // TODO: Read the db, create the array of objects again
     void getListOfQuestionObjects() {
