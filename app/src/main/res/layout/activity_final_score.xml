@@ -32,15 +32,18 @@
 
     <TextView
         android:id="@+id/finalScore"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="436dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="204dp"
         android:background="@drawable/harder_border"
         android:includeFontPadding="true"
+        android:paddingStart="@dimen/default_gap"
         android:text="TextView"
         android:textSize="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.617" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

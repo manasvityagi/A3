@@ -52,9 +52,11 @@ public class QuizActivity extends AppCompatActivity {
                 currentQuestionPointer+=1;
 
                 if(currentQuestionPointer == quizQuesLength){
+
                     Intent intent = new Intent(QuizActivity.this, FinalScore.class);
-                    intent.putExtra("score", currentScore);
+                    intent.putExtra("score", "100");
                     startActivity(intent);
+
                 }
             }
         });
@@ -99,6 +101,7 @@ public class QuizActivity extends AppCompatActivity {
         radioOption4 = (RadioButton) findViewById(R.id.radioButton4);
         submitButton = (Button) findViewById(R.id.submit_answer);
         quesRadioGroup = findViewById(R.id.radioGroup);
+        radioOption1.setSelected(true);
         //Load First Question
         loadQuestionOnUI(questionList.get(0));
         currentQuestionPointer=1;
