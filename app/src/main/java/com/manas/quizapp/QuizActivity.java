@@ -18,7 +18,7 @@ import java.util.List;
 public class QuizActivity extends AppCompatActivity {
     SQLiteDatabase dbHandler = null;
     List<QuizQuestionsModel> questionList;
-    Integer currentQuestionPointer =0;
+    Integer currentQuestionPointer = 0;
     TextView questionStatementField;
     RadioGroup quesRadioGroup;
     RadioButton radioOption1;
@@ -28,7 +28,7 @@ public class QuizActivity extends AppCompatActivity {
     RadioButton selectedRadioButton;
     Button submitButton;
     int quizQuesLength;
-    private Integer currentScore = 100;
+    int currentScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +41,19 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // get selected radio button from radioGroup~
-                int selectedId = quesRadioGroup.getCheckedRadioButtonId();
                 // find the radiobutton by returned id
-                selectedRadioButton = (RadioButton) findViewById(selectedId);
-                Toast.makeText(QuizActivity.this,
-                        selectedRadioButton.getText(), Toast.LENGTH_SHORT).show();
-                Log.e("app",  selectedRadioButton.getText().toString());
+                selectedRadioButton = (RadioButton) findViewById(quesRadioGroup.getCheckedRadioButtonId());
+                String selectedAnswer = selectedRadioButton.getText().toString();
+                Toast.makeText(QuizActivity.this, selectedAnswer, Toast.LENGTH_SHORT).show();
+
+                checkAnswerAndScore(questionList.get(currentQuestionPointer), selectedAnswer);
                 loadQuestionOnUI(questionList.get(currentQuestionPointer));
-                currentQuestionPointer+=1;
+                currentQuestionPointer += 1;
 
-                if(currentQuestionPointer == quizQuesLength){
-
+                if (currentQuestionPointer == quizQuesLength) {
                     Intent intent = new Intent(QuizActivity.this, FinalScore.class);
-                    intent.putExtra("score", "100");
+                    intent.putExtra("score", String.valueOf(currentScore));
                     startActivity(intent);
-
                 }
             }
         });
@@ -70,13 +67,23 @@ public class QuizActivity extends AppCompatActivity {
         super.onPostResume();
     }
 
-    private void loadQuestionOnUI(QuizQuestionsModel individualQuestions){
+    private void loadQuestionOnUI(QuizQuestionsModel individualQuestions) {
         Log.e("app", "Question Statement " + individualQuestions.getQuestionStatement());
+
         questionStatementField.setText(individualQuestions.getQuestionStatement());
         radioOption1.setText(individualQuestions.getOption1());
         radioOption2.setText(individualQuestions.getOption2());
         radioOption3.setText(individualQuestions.getOption3());
         radioOption4.setText(individualQuestions.getOption4());
+    }
+
+    private void checkAnswerAndScore(QuizQuestionsModel individualQuestions, String selectedAnswer) {
+        if (individualQuestions.getCorrectOptionNumber().equals(selectedAnswer)) {
+            Log.e("app", "Correct Answer Selected");
+            currentScore = currentScore + 10;
+        } else {
+            Log.e("app", "Wrong Answer Selected");
+        }
     }
 
     private List<QuizQuestionsModel> getQuestionList() {
@@ -104,7 +111,7 @@ public class QuizActivity extends AppCompatActivity {
         radioOption1.setSelected(true);
         //Load First Question
         loadQuestionOnUI(questionList.get(0));
-        currentQuestionPointer=1;
+        currentQuestionPointer = 1;
     }
 
 
