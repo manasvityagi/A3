@@ -85,7 +85,7 @@ public class QuizActivity extends AppCompatActivity {
 
         // Open database handler using our own specialized CustomerDatabaseHelper
         QuizDAO helper = new QuizDAO(getApplicationContext());
-        List<QuizQuestionsModel> questionList = helper.getQuestions(categoryPassedToThis, quizLength);
+        List<QuizQuestionsModel> questionList = helper.getQuestions(categoryPassedToThis, quizQuesLength);
 
         return questionList;
     }

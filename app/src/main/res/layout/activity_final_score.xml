@@ -37,6 +37,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginBottom="436dp"
         android:background="@drawable/harder_border"
+        android:includeFontPadding="true"
         android:text="TextView"
         android:textSize="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
