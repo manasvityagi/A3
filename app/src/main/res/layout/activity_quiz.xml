@@ -42,13 +42,15 @@
 
     <TextView
         android:id="@+id/QuestionStatement"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="150dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/harder_border"
         android:text="@string/question_text"
         android:textSize="18sp"
+        android:paddingStart="@dimen/default_gap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar1" />
 
@@ -106,16 +108,17 @@
             app:layout_constraintTop_toBottomOf="@+id/radioButton3" />
 
     </RadioGroup>
+
     <Button
         android:id="@+id/submit_answer"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="8dp"
-        android:text="submit"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_corners"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        android:text="submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,3 +13,5 @@ e
 0app/src/main/java/com/manas/quizapp/QuizDAO.java,f\9\f9b7346aca584ee2f4e74b292bc9fd19bcef4501
 e
 5app/src/main/java/com/manas/quizapp/MainActivity.java,3\4\34dfe0faca2b495a53abdfe8f6a648c351df4b93
+>
+app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f

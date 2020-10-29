@@ -1,8 +1,18 @@
 
-V	java:S110"<This class has 9 parents which is greater than 5 authorized.(ä¥Éïûÿÿÿÿ
-G
-java:S1153"1Directly append the argument of String.valueOf().(úŠ¯¥
-Q	java:S125"<This block of commented-out lines of code should be removed.(’¨è
-Q	java:S125"<This block of commented-out lines of code should be removed.(œå×À
-K
-java:S1144"5Remove this unused private "initiateDatabase" method.(»¡™²
+c
+java:S1854"HRemove this useless assignment to local variable "categoryPassedToThis".(Ÿÿ·æ8É‰»™×.
+`
+java:S1117"@Rename "questionList" which hides the field declared at line 19.(Úº‡ÿÿÿÿÿ8™Çø—×.
+T	java:S110"<This class has 9 parents which is greater than 5 authorized.(ä¥Éïûÿÿÿÿ
+H
+java:S1604"(Make this anonymous inner class a lambda(Ğ˜ğúÿÿÿÿ8Ç€ø”×.
+I
+java:S1481"/Remove this unused "quizLength" local variable.(ä–*8É‰»™×.
+L
+java:S1153"1Directly append the argument of String.valueOf().(úŠ¯¥8™Çø—×.
+`
+java:S2095"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8™Çø—×.
+X
+java:S1854">Remove this useless assignment to local variable "quizLength".(ä–*8É‰»™×.
+T
+java:S1481"9Remove this unused "categoryPassedToThis" local variable.(Ÿÿ·æ8É‰»™×.

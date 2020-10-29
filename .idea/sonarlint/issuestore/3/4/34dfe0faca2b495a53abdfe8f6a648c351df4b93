@@ -1,45 +1,47 @@
 
-d
-java:S2095g"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ
-[
-java:S20950"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­
-Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž
-C
-java:S1604 "(Make this anonymous inner class a lambda(ÞÊ”µüÿÿÿÿ
-I
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
-U
-java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ
+Y
+java:S2095"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­
+•
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
+R
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
+š
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹þÿÿÿÿ
+A
+java:S1604"(Make this anonymous inner class a lambda(ÞÊ”µüÿÿÿÿ
+D
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+K
+java:S1135"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
+O	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž
+L
+java:S1128"3Remove this unused import 'java.lang.reflect.Type'.(‰ûÕñýÿÿÿÿ
+r
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(èÉåÑüÿÿÿÿ
+b
+java:S2095"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ
 F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-N
-java:S1128"3Remove this unused import 'java.lang.reflect.Type'.(‰ûÕñýÿÿÿÿ
-I
-java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å
-J
-java:S1128"/Remove this unused import 'java.io.FileReader'.(Â¡¢äþÿÿÿÿ
-—
-java:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
-œ
-java:S1186P"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëý‰ºÿÿÿÿÿ
-œ
-java:S1186_"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹þÿÿÿÿ
-t
-java:S2293/"YReplace the type specification in this constructor call with the diamond operator ("<>").(èÉåÑüÿÿÿÿ
-7
-java:S1116/"Remove this empty statement.(èÉåÑüÿÿÿÿ
-T
-java:S3400G"9Remove this method and declare a constant for this value.(Ö§”Óþÿÿÿÿ
-M
-java:S1135J"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
-H
-java:S1135O"2Complete the task associated to this TODO comment.(Íàþ¡
-Q	java:S125U"<This block of commented-out lines of code should be removed.(¬«íû
+java:S1135"2Complete the task associated to this TODO comment.(Íàþ¡
+O	java:S125"<This block of commented-out lines of code should be removed.(¬«íû
 G
-java:S1135T"2Complete the task associated to this TODO comment.(™øþL
+java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å
+R
+java:S3400"9Remove this method and declare a constant for this value.(Ö§”Óþÿÿÿÿ
+K
+java:S1135"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
+S
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ
 M
-java:S1135^"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
-e
-java:S2674j"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
-T
-java:S4719m"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8œ¸í‘×.
+G
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+E
+java:S1135"2Complete the task associated to this TODO comment.(™øþL
+c
+java:S2674"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
+5
+java:S1116"Remove this empty statement.(èÉåÑüÿÿÿÿ
+H
+java:S1128"/Remove this unused import 'java.io.FileReader'.(Â¡¢äþÿÿÿÿ
+š
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëý‰ºÿÿÿÿÿ
