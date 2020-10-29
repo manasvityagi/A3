@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         QuizDAO helper = new QuizDAO(getApplicationContext());
         for (JsonObject arrQuestion : arrQuestions) {
             QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
-            Log.e("quiz", String.valueOf(arrQuestion.get("Option1")));
+
             tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option1")).replace("\"",""));
             tempQuestion.setOption2(String.valueOf(arrQuestion.get("Option2")).replace("\"",""));
             tempQuestion.setOption3(String.valueOf(arrQuestion.get("Option3")).replace("\"",""));

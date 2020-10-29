@@ -107,26 +107,42 @@ public class QuizDAO extends SQLiteOpenHelper {
     public List<QuizQuestionsModel> getQuestions(String category, Integer limit) {
         List<QuizQuestionsModel> questionList = new ArrayList<QuizQuestionsModel>();
         // Select All Query
-        String selectQuery = "SELECT  * FROM " + TABLE + " LIMIT " + String.valueOf(limit) +
-                " WHERE " + QUESTION_CATEGORY + "=" + category;
+        category = category.toLowerCase();
+        String selectQuery = "SELECT  * FROM " + TABLE +
+                " WHERE " + QUESTION_CATEGORY + "="  + "\'"+category  + "\'"+ " LIMIT " + String.valueOf(limit) ;
+        Log.e("",selectQuery);
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
+
+//                Log.e("app",cursor.getString(0).replace("\"", ""));
+//                Log.e("app",cursor.getString(1).replace("\"", ""));
+//                Log.e("app",cursor.getString(2).replace("\"", ""));
+//                Log.e("app",cursor.getString(3).replace("\"", ""));
+//                Log.e("app",cursor.getString(4).replace("\"", ""));
+//                Log.e("app",cursor.getString(5).replace("\"", ""));
+//                Log.e("app",cursor.getString(6).replace("\"", ""));
+//                Log.e("app",cursor.getString(7).replace("\"", ""));
+//                Log.e("app",cursor.getString(8).replace("\"", ""));
+//                Log.e("app",cursor.getString(9).replace("\"", ""));
+//                Log.e("app",cursor.getString(10).replace("\"", ""));
+//
+
                 QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
-                tempQuestion.setOption1(cursor.getString(1).replace("\"", ""));
-                tempQuestion.setOption2(cursor.getString(2).replace("\"", ""));
-                tempQuestion.setOption3(cursor.getString(3).replace("\"", ""));
-                tempQuestion.setOption4(cursor.getString(4).replace("\"", ""));
-                tempQuestion.setOption5(cursor.getString(5).replace("\"", ""));
-                tempQuestion.setOption6(cursor.getString(6).replace("\"", ""));
-                tempQuestion.setQuestionStatement(cursor.getString(7).replace("\"", ""));
-                tempQuestion.setCorrectOptionNumber(cursor.getString(8).replace("\"", ""));
-                tempQuestion.setPictureUrl(cursor.getString(9).replace("\"", ""));
-                tempQuestion.setQuestionCategory(cursor.getString(10).replace("\"", ""));
-                tempQuestion.setUserRating(Double.valueOf(String.valueOf(cursor.getString(11))));
+                tempQuestion.setOption1(cursor.getString(0).replace("\"", ""));
+                tempQuestion.setOption2(cursor.getString(1).replace("\"", ""));
+                tempQuestion.setOption3(cursor.getString(2).replace("\"", ""));
+                tempQuestion.setOption4(cursor.getString(3).replace("\"", ""));
+                tempQuestion.setOption5(cursor.getString(4).replace("\"", ""));
+                tempQuestion.setOption6(cursor.getString(5).replace("\"", ""));
+                tempQuestion.setQuestionStatement(cursor.getString(6).replace("\"", ""));
+                tempQuestion.setCorrectOptionNumber(cursor.getString(7).replace("\"", ""));
+                tempQuestion.setPictureUrl(cursor.getString(8).replace("\"", ""));
+                tempQuestion.setQuestionCategory(cursor.getString(9).replace("\"", ""));
+                tempQuestion.setUserRating(Double.valueOf(String.valueOf(cursor.getString(10))));
 
                 // Adding questions to list
                 questionList.add(tempQuestion);
