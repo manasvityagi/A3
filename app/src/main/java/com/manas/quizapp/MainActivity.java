@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startQuizBtn = findViewById(R.id.start_quiz_btn);
+        ScoreDAO score = new ScoreDAO(getApplicationContext());
+        score.createScoreTable();
+        ScoreRecordModel scoreObj = new ScoreRecordModel("manas","123321", "courtesy", 10, 80, 80.0);
+        score.insertScoreObject(scoreObj);
+        //(String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent) {
         startQuizBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

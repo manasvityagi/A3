@@ -1,9 +1,12 @@
 package com.manas.quizapp;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,32 +16,46 @@ public class ScoreDAO extends SQLiteOpenHelper {
 
     public final static String DATAFILE_NAME = "quiz.db";
     public final static String TABLE = "score_table";
+//    public final static String insert_base = " ("
+//            + OP1 + " , "
+//            + OP2 + " , "
+//            + OP3 + " , "
+//            + OP4 + " , "
+//            + QUESTION_STATEMENT + " , "
+//            + CORRECT_OPTION + " , "
+//            + PICTURE_URL + " , "
+//            + QUESTION_CATEGORY + " , "
+//            + RATING + ") ";
 
-    public void ScoreDAO() {
-
+    public ScoreDAO(Context context) {
+        super(context, DATAFILE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-//        CREATE TABLE `score` (
-//	`session_ts` DATE DEFAULT '',
-//	`category` VARCHAR DEFAULT '',
-//	`quiz_length` INT,
-//	`score` INT,
-//	`username` VARCHAR,
-//	`correct_percent` DOUBLE
-//);
-        String sql = "CREATE TABLE `score` (\r\n" +
-                "	`session_ts` DATE DEFAULT '',\r\n" +
-                "	`category` VARCHAR DEFAULT '',\r\n" +
-                "	`quiz_length` INT,\r\n" +
-                "	`score` INT,\r\n" +
-                "	`username` VARCHAR,\r\n" +
-                "	`correct_percent` DOUBLE\r\n" +
-                ");\r\n";
+        String sql = "CREATE TABLE `score` (`session_ts` DATE, `category` VARCHAR, " +
+                "`quiz_length` INT, `score` INT, `username` VARCHAR, `correct_percent` DOUBLE)";
+        Log.e("app", sql);
 
         sqLiteDatabase.execSQL(sql);
+
+    }
+
+    public void createScoreTable() {
+
+
+        String sql = "CREATE TABLE `score` (`session_ts` DATE, `category` VARCHAR, " +
+                "`quiz_length` INT, `score` INT, `username` VARCHAR, `correct_percent` DOUBLE)";
+        Log.e("app", sql);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            db.execSQL(sql);
+        } catch (Exception e) {
+            Log.e("fatal", "db create erroro it exists already");
+        }
+        db.close();
 
     }
 
@@ -49,23 +66,22 @@ public class ScoreDAO extends SQLiteOpenHelper {
     }
 
 
-    public void insertQuestionObject(ArrayList<QuizQuestionsModel> questionArr) {
+    public void insertScoreObject(ScoreRecordModel scoreObj) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String cleanSQL = "DELETE FROM " + TABLE;
-        db.execSQL(cleanSQL);
+        String insertQuery = "INSERT INTO score (session_ts, category, quiz_length, score, username, correct_percent) "
+       // VALUES (123321, 'courtesy', 10, 80, 'manas', 80.0)
+        +" VALUES(\"TSX\", \"CTX\", \"LEN\", \"SRX\", \"USX\", \"CRKT\");";
 
-        for (QuizQuestionsModel q : questionArr) {
-            String insertQuery = "INSERT INTO " + TABLE + " " + insert_base +
-                    " VALUES(\"OPX1\", \"OPX2\", \"OPX3\", \"OPX4\", \"OPX5\", \"OPX6\", \"QSX\", \"CONX\", \"URL\", \"QCX\", 4);";
+            insertQuery = insertQuery.replace("TSX", scoreObj.getSessionTS());
+            insertQuery = insertQuery.replace("CTX", scoreObj.getCategory());
+            insertQuery = insertQuery.replace("LEN", String.valueOf(scoreObj.getQuiz_length()));
+            insertQuery = insertQuery.replace("SRX",  String.valueOf(scoreObj.getCorrect_percent()));
+            insertQuery = insertQuery.replace("USX",  scoreObj.getUsername());
+            insertQuery = insertQuery.replace("CRKT",  scoreObj.getUsername());
 
-            insertQuery = insertQuery.replace("OPX1", q.getOption1());
-            insertQuery = insertQuery.replace("OPX2", q.getOption2());
-            insertQuery = insertQuery.replace("OPX3", q.getOption3());
-            insertQuery = insertQuery.replace("OPX4", q.getOption4());
+            Log.e("app", insertQuery);
+            //db.execSQL(insertQuery);
 
-            //Log.e("app", insertQuery);
-            db.execSQL(insertQuery);
-        }
 
         db.close();
     }
