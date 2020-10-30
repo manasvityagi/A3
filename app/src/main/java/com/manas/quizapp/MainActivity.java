@@ -43,10 +43,12 @@ public class MainActivity extends AppCompatActivity {
         getMyRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ScoreDAO score = new ScoreDAO(getApplicationContext());
-                score.createScoreTable();
-                score.cleanDB();
-                List<ScoreRecordModel>  scoreObjectsArrayList = score.getScore();
+//                ScoreDAO score = new ScoreDAO(getApplicationContext());
+//                score.createScoreTable();
+//                score.cleanDB();
+//                List<ScoreRecordModel>  scoreObjectsArrayList = score.getScore();
+                Intent i = new Intent(MainActivity.this, PastRecord.class);
+                startActivity(i);
             }
         });
     }

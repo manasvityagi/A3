@@ -11,6 +11,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.manas.quizapp.databinding.ActivityPastRecordBinding;
+import com.manas.quizapp.models.ScoreDAO;
+import com.manas.quizapp.models.ScoreRecordModel;
+
+import java.util.List;
 
 public class PastRecord extends AppCompatActivity {
 
@@ -19,6 +23,11 @@ public class PastRecord extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ScoreDAO score = new ScoreDAO(getApplicationContext());
+        score.createScoreTable();
+        score.cleanDB();
+        List<ScoreRecordModel> scoreObjectsArrayList = score.getScore();
 
         binding = ActivityPastRecordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
