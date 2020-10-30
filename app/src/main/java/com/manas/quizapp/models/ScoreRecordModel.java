@@ -1,4 +1,4 @@
-package com.manas.quizapp;
+package com.manas.quizapp.models;
 
 public class ScoreRecordModel {
     String Username;
@@ -65,7 +65,7 @@ public class ScoreRecordModel {
         return correct_percent;
     }
 
-    public void setCorrect_percent(double correct_percent) {
+    public void setCorrect_percent(Double correct_percent) {
         this.correct_percent = correct_percent;
     }
 

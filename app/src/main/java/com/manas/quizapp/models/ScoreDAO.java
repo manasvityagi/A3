@@ -1,12 +1,10 @@
-package com.manas.quizapp;
+package com.manas.quizapp.models;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,17 +13,7 @@ import java.util.List;
 public class ScoreDAO extends SQLiteOpenHelper {
 
     public final static String DATAFILE_NAME = "quiz.db";
-    public final static String TABLE = "score_table";
-//    public final static String insert_base = " ("
-//            + OP1 + " , "
-//            + OP2 + " , "
-//            + OP3 + " , "
-//            + OP4 + " , "
-//            + QUESTION_STATEMENT + " , "
-//            + CORRECT_OPTION + " , "
-//            + PICTURE_URL + " , "
-//            + QUESTION_CATEGORY + " , "
-//            + RATING + ") ";
+    public final static String TABLE = "score";
 
     public ScoreDAO(Context context) {
         super(context, DATAFILE_NAME, null, 1);
@@ -69,49 +57,41 @@ public class ScoreDAO extends SQLiteOpenHelper {
     public void insertScoreObject(ScoreRecordModel scoreObj) {
         SQLiteDatabase db = this.getWritableDatabase();
         String insertQuery = "INSERT INTO score (session_ts, category, quiz_length, score, username, correct_percent) "
-       // VALUES (123321, 'courtesy', 10, 80, 'manas', 80.0)
-        +" VALUES(\"TSX\", \"CTX\", \"LEN\", \"SRX\", \"USX\", \"CRKT\");";
+                + " VALUES(\"TSX\", \"CTX\", \"LEN\", \"SRX\", \"USX\", \"CRKT\");";
 
-            insertQuery = insertQuery.replace("TSX", scoreObj.getSessionTS());
-            insertQuery = insertQuery.replace("CTX", scoreObj.getCategory());
-            insertQuery = insertQuery.replace("LEN", String.valueOf(scoreObj.getQuiz_length()));
-            insertQuery = insertQuery.replace("SRX",  String.valueOf(scoreObj.getCorrect_percent()));
-            insertQuery = insertQuery.replace("USX",  scoreObj.getUsername());
-            insertQuery = insertQuery.replace("CRKT",  scoreObj.getUsername());
+        insertQuery = insertQuery.replace("TSX", scoreObj.getSessionTS());
+        insertQuery = insertQuery.replace("CTX", scoreObj.getCategory());
+        insertQuery = insertQuery.replace("LEN", String.valueOf(scoreObj.getQuiz_length()));
+        insertQuery = insertQuery.replace("SRX", String.valueOf(scoreObj.getCorrect_percent()));
+        insertQuery = insertQuery.replace("USX", scoreObj.getUsername());
+        insertQuery = insertQuery.replace("CRKT", String.valueOf(scoreObj.getCorrect_percent()));
 
-            Log.e("app", insertQuery);
-            //db.execSQL(insertQuery);
-
+        Log.e("app", insertQuery);
+        db.execSQL(insertQuery);
 
         db.close();
     }
 
 
     // code to get all contacts in a list view
-    public List<ScoreRecordModel> getScore(Integer limit) {
+    public List<ScoreRecordModel> getScore() {
         List<ScoreRecordModel> scoreList = new ArrayList<ScoreRecordModel>();
         // Select All Query
 
-        String selectQuery = "SELECT  * FROM " + TABLE + " LIMIT " + limit;
-        Log.e("", selectQuery);
+        String selectQuery = "SELECT  * FROM " + TABLE;
+        Log.e("app", selectQuery);
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
-
-//                Log.e("app",cursor.getString(0).replace("\"", ""));
-//                Log.e("app",cursor.getString(1).replace("\"", ""));
-//                Log.e("app",cursor.getString(2).replace("\"", ""));
-//                Log.e("app",cursor.getString(3).replace("\"", ""));
-//                Log.e("app",cursor.getString(4).replace("\"", ""));
-
                 ScoreRecordModel scoreRow = new ScoreRecordModel();
+
                 scoreRow.setSessionTS(cursor.getString(0).replace("\"", ""));
                 scoreRow.setCategory(cursor.getString(1).replace("\"", ""));
                 scoreRow.setQuiz_length(Integer.valueOf(cursor.getString(2).replace("\"", "")));
-                scoreRow.setScore(Integer.valueOf(cursor.getString(3).replace("\"", "")));
+                scoreRow.setCorrect_percent(Double.valueOf(cursor.getString(3).replace("\"", "")));
                 scoreRow.setUsername(cursor.getString(4).replace("\"", ""));
                 scoreRow.setCorrect_percent(Double.valueOf(cursor.getString(5).replace("\"", "")));
 
@@ -121,5 +101,11 @@ public class ScoreDAO extends SQLiteOpenHelper {
         }
 
         return scoreList;
+    }
+
+    public void cleanDB(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String cleanSQL = "DELETE FROM " + TABLE;
+        db.execSQL(cleanSQL);
     }
 }

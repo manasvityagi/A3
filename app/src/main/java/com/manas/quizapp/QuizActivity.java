@@ -13,6 +13,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.manas.quizapp.models.QuizDAO;
+import com.manas.quizapp.models.QuizQuestionsModel;
+
 import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {

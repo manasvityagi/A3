@@ -4,35 +4,32 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.manas.quizapp.models.QuizDAO;
+import com.manas.quizapp.models.QuizQuestionsModel;
+import com.manas.quizapp.models.ScoreDAO;
+import com.manas.quizapp.models.ScoreRecordModel;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.lang.reflect.Type;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
+    Button getMyRecord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startQuizBtn = findViewById(R.id.start_quiz_btn);
-        ScoreDAO score = new ScoreDAO(getApplicationContext());
-        score.createScoreTable();
-        ScoreRecordModel scoreObj = new ScoreRecordModel("manas","123321", "courtesy", 10, 80, 80.0);
-        score.insertScoreObject(scoreObj);
+        getMyRecord = findViewById(R.id.my_record);
+
         //(String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent) {
         startQuizBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
                 populateDBfromJson();
                 Intent i = new Intent(MainActivity.this, ChoseCategory.class);
                 startActivity(i);
+            }
+        });
+
+        getMyRecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScoreDAO score = new ScoreDAO(getApplicationContext());
+                score.createScoreTable();
+                score.cleanDB();
+                List<ScoreRecordModel>  scoreObjectsArrayList = score.getScore();
             }
         });
     }

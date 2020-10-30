@@ -1,4 +1,4 @@
-package com.manas.quizapp;
+package com.manas.quizapp.models;
 
 
 

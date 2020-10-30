@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinalScore"></activity>
+        <activity
+            android:name=".PastRecord"
+            android:label="@string/title_activity_past_record"></activity>
+        <activity android:name=".FinalScore" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".QuizLength" />
         <!--
