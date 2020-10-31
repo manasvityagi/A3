@@ -1,14 +1,14 @@
 
-u	java:S116"[Rename this field "FULL_QUIZ_LENGTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¹ËÃùÿÿÿÿ
-C
-java:S1604%"(Make this anonymous inner class a lambda(úÏ·¸ÿÿÿÿÿ
-P	java:S110"<This class has 9 parents which is greater than 5 authorized.(»ö÷
-6
-java:S1170"!Make this final field static too.(¼ÖŸm
-o	java:S116"[Rename this field "MINI_QUIZ_LENGTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ÖŸm
-_
-java:S1192"IDefine a constant instead of duplicating this literal "category" 3 times.(Ÿÿ·æ
-<
-java:S1170"!Make this final field static too.(•¹ËÃùÿÿÿÿ
 C
 java:S1604"(Make this anonymous inner class a lambda(ÚÈÁÉûÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(•¹ËÃùÿÿÿÿ
+P	java:S110"<This class has 9 parents which is greater than 5 authorized.(»ö÷
+_
+java:S1192"IDefine a constant instead of duplicating this literal "category" 3 times.(Ÿÿ·æ
+o	java:S116"[Rename this field "MINI_QUIZ_LENGTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ÖŸm
+u	java:S116"[Rename this field "FULL_QUIZ_LENGTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¹ËÃùÿÿÿÿ
+6
+java:S1170"!Make this final field static too.(¼ÖŸm
+C
+java:S1604%"(Make this anonymous inner class a lambda(úÏ·¸ÿÿÿÿÿ

@@ -1,47 +1,35 @@
 
-Y
-java:S2095"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­
-•
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
-R
-java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹þÿÿÿÿ
-A
-java:S1604"(Make this anonymous inner class a lambda(ÞÊ”µüÿÿÿÿ
-D
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-K
-java:S1135"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
-O	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž
-L
-java:S1128"3Remove this unused import 'java.lang.reflect.Type'.(‰ûÕñýÿÿÿÿ
-r
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(èÉåÑüÿÿÿÿ
-b
-java:S2095"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ
-F
-java:S1135"2Complete the task associated to this TODO comment.(Íàþ¡
-O	java:S125"<This block of commented-out lines of code should be removed.(¬«íû
-G
-java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å
-R
-java:S3400"9Remove this method and declare a constant for this value.(Ö§”Óþÿÿÿÿ
-K
-java:S1135"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
-S
-java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ
-M
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8œ¸í‘×.
-G
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
-E
-java:S1135"2Complete the task associated to this TODO comment.(™øþL
-c
-java:S2674"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
-5
-java:S1116"Remove this empty statement.(èÉåÑüÿÿÿÿ
+X	java:S125."<This block of commented-out lines of code should be removed.(Ä¨ŠÁ8ËàÑ×.
+—
+java:S1186Y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
+C
+java:S1604""(Make this anonymous inner class a lambda(ÞÊ”µüÿÿÿÿ
+T
+java:S4719{"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
+t
+java:S2293="YReplace the type specification in this constructor call with the diamond operator ("<>").(èÉåÑüÿÿÿÿ
 H
-java:S1128"/Remove this unused import 'java.io.FileReader'.(Â¡¢äþÿÿÿÿ
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëý‰ºÿÿÿÿÿ
+java:S1135]"2Complete the task associated to this TODO comment.(Íàþ¡
+M
+java:S1135X"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
+]	java:S125!"<This block of commented-out lines of code should be removed.( ˜Þßÿÿÿÿÿ8ÇýüÇ×.
+E
+java:S1604+"(Make this anonymous inner class a lambda(±»ìÊ8ÜªÑ×.
+œ
+java:S1186m"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹þÿÿÿÿ
+œ
+java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëý‰ºÿÿÿÿÿ
+T
+java:S3400U"9Remove this method and declare a constant for this value.(Ö§”Óþÿÿÿÿ
+G
+java:S1135b"2Complete the task associated to this TODO comment.(™øþL
+M
+java:S1135l"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
+d
+java:S2095u"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ
+7
+java:S1116="Remove this empty statement.(èÉåÑüÿÿÿÿ
+e
+java:S2674x"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž
+Q	java:S125c"<This block of commented-out lines of code should be removed.(¬«íû

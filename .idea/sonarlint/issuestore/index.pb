@@ -1,17 +1,29 @@
 
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-k
-;app/src/main/java/com/manas/quizapp/QuizQuestionsModel.java,6\a\6afdfdd4be74b8671b6c9ced0bb1dfe5faa5fe6e
 c
 3app/src/main/java/com/manas/quizapp/QuizLength.java,c\0\c0eafda53e6330eaf49593ee30100492584e4999
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 e
 5app/src/main/java/com/manas/quizapp/QuizActivity.java,4\e\4e8d3288d8ea7da4e5c2744c03feb6f43e8e017a
-`
-0app/src/main/java/com/manas/quizapp/QuizDAO.java,f\9\f9b7346aca584ee2f4e74b292bc9fd19bcef4501
 e
 5app/src/main/java/com/manas/quizapp/MainActivity.java,3\4\34dfe0faca2b495a53abdfe8f6a648c351df4b93
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
+c
+3app/src/main/java/com/manas/quizapp/FinalScore.java,4\0\40daf4760da49b72dbf2adb7304394c10da9dbb4
+r
+Bapp/src/main/java/com/manas/quizapp/models/QuizQuestionsModel.java,3\4\3452cab6d3d1cdfc3f623bfd6910ee7087033b4d
+p
+@app/src/main/java/com/manas/quizapp/models/ScoreRecordModel.java,0\e\0e10b0b4656739e2a03a8002df990b156e8882f0
+h
+8app/src/main/java/com/manas/quizapp/models/ScoreDAO.java,e\c\ecc10568ae0fd13507292681ef75964d7fa11a9e
+g
+7app/src/main/java/com/manas/quizapp/models/QuizDAO.java,1\1\11805590d6f396061c5c87d907585367bab64c48
+q
+Aapp/src/main/java/com/manas/quizapp/models/CategoryItemModel.java,7\f\7f214405ecf0354d271e6928a2db3731b6d4345d
+c
+3app/src/main/java/com/manas/quizapp/PastRecord.java,b\4\b485a5bced1100d266226342ff697c3e6da612e3
+A
+gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4

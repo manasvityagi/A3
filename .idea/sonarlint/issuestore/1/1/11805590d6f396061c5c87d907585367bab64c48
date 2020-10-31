@@ -1,0 +1,44 @@
+
+S
+java:S1153n"1Directly append the argument of String.valueOf().(š§òÅÿÿÿÿÿ8‘Àÿ’×.
+o	java:S115+"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(£ß…š
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(á£¿£ùÿÿÿÿ
+Z
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¹¥‰
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(È†‚æùÿÿÿÿ
+u
+java:S2293j"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿ¼®:8ïåÏÿÖ.
+]	java:S125w"<This block of commented-out lines of code should be removed.(°þÏ­ûÿÿÿÿ8ÇÁº”×.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜®»ùýÿÿÿÿ
+X	java:S125A"<This block of commented-out lines of code should be removed.(„±öÃ8¨ÑÑ‚×.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Û‹Ãƒùÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(õö¢øÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‘÷†¡
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ö«„žûÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(†óÚõüÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(©‚ Ûÿÿÿÿÿ
+‘
+java:S1319M"vThe type of the "questionArr" object should be an interface such as "List" rather than the implementation "ArrayList".(§ˆ‘Ïýÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¯²¿«
+^
+java:S1192"HDefine a constant instead of duplicating this literal " text, " 8 times.(ê§ËÙ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õö¢øÿÿÿÿ
+]	java:S125`"<This block of commented-out lines of code should be removed.(Š¯ø¾úÿÿÿÿ8‘õÐ‚×.
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(™¡ñ‘
+[
+java:S1124+"EReorder the modifiers to comply with the Java Language Specification.(£ß…š
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(«Ðüáüÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ù²Ù©
