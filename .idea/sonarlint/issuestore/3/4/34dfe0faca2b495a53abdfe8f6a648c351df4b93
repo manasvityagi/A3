@@ -1,35 +1,37 @@
 
-X	java:S125."<This block of commented-out lines of code should be removed.(Ä¨ŠÁ8ËàÑ×.
-—
-java:S1186Y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
-C
-java:S1604""(Make this anonymous inner class a lambda(ŞÊ”µüÿÿÿÿ
-T
-java:S4719{"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
-t
-java:S2293="YReplace the type specification in this constructor call with the diamond operator ("<>").(èÉåÑüÿÿÿÿ
-H
-java:S1135]"2Complete the task associated to this TODO comment.(Íàş¡
-M
-java:S1135X"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
-]	java:S125!"<This block of commented-out lines of code should be removed.( ˜Şßÿÿÿÿÿ8ÇıüÇ×.
-E
-java:S1604+"(Make this anonymous inner class a lambda(±»ìÊ8ÜªÑ×.
-œ
-java:S1186m"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹şÿÿÿÿ
-œ
-java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëı‰ºÿÿÿÿÿ
-T
-java:S3400U"9Remove this method and declare a constant for this value.(Ö§”Óşÿÿÿÿ
-G
-java:S1135b"2Complete the task associated to this TODO comment.(™øşL
-M
-java:S1135l"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
 d
 java:S2095u"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ
+t
+java:S2293="YReplace the type specification in this constructor call with the diamond operator ("<>").(èÉåÑüÿÿÿÿ
+X	java:S125."<This block of commented-out lines of code should be removed.(Ä¨ŠÁ8ËàÑ×.
+Q	java:S125c"<This block of commented-out lines of code should be removed.(¬«íû
+C
+java:S1604""(Make this anonymous inner class a lambda(ŞÊ”µüÿÿÿÿ
+—
+java:S1186Y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
 7
 java:S1116="Remove this empty statement.(èÉåÑüÿÿÿÿ
+M
+java:S1135l"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
+T
+java:S4719{"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
+M
+java:S1135X"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±
+œ
+java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëı‰ºÿÿÿÿÿ
+G
+java:S1135b"2Complete the task associated to this TODO comment.(™øşL
+E
+java:S1604+"(Make this anonymous inner class a lambda(±»ìÊ8ÜªÑ×.
+H
+java:S1135]"2Complete the task associated to this TODO comment.(Íàş¡
+œ
+java:S1186m"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹şÿÿÿÿ
 e
 java:S2674x"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
-Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±
-Q	java:S125c"<This block of commented-out lines of code should be removed.(¬«íû
+b
+java:S2095>"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8ìø’ü×.
+]	java:S125!"<This block of commented-out lines of code should be removed.( ˜Şßÿÿÿÿÿ8ÇıüÇ×.
+T
+java:S3400U"9Remove this method and declare a constant for this value.(Ö§”Óşÿÿÿÿ

@@ -20,5 +20,7 @@ public class PastRecord extends AppCompatActivity {
         score.createScoreTable();
         score.cleanDB();
         List<ScoreRecordModel> scoreObjectsArrayList = score.getScore();
+
+
     }
 }

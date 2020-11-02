@@ -1,44 +1,44 @@
 
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(õö¢øÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(™¡ñ‘
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¯²¿«
+o	java:S115,"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(£ß…š
 S
-java:S1153n"1Directly append the argument of String.valueOf().(š§òÅÿÿÿÿÿ8‘Àÿ’×.
-o	java:S115+"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(£ß…š
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(á£¿£ùÿÿÿÿ
-Z
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¹¥‰
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(È†‚æùÿÿÿÿ
-u
-java:S2293j"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿ¼®:8ïåÏÿÖ.
-]	java:S125w"<This block of commented-out lines of code should be removed.(°şÏ­ûÿÿÿÿ8ÇÁº”×.
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜®»ùıÿÿÿÿ
-X	java:S125A"<This block of commented-out lines of code should be removed.(„±öÃ8¨ÑÑ‚×.
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Û‹Ãƒùÿÿÿÿ
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(õö¢øÿÿÿÿ
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‘÷†¡
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ö«„ûÿÿÿÿ
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(†óÚõüÿÿÿÿ
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(©‚ Ûÿÿÿÿÿ
+java:S1153{"1Directly append the argument of String.valueOf().(š§òÅÿÿÿÿÿ8Ş¥öšØ.
 ‘
-java:S1319M"vThe type of the "questionArr" object should be an interface such as "List" rather than the implementation "ArrayList".(§ˆ‘Ïıÿÿÿÿ
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¯²¿«
-^
-java:S1192"HDefine a constant instead of duplicating this literal " text, " 8 times.(ê§ËÙ
-t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õö¢øÿÿÿÿ
-]	java:S125`"<This block of commented-out lines of code should be removed.(Š¯ø¾úÿÿÿÿ8‘õĞ‚×.
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(™¡ñ‘
-[
-java:S1124+"EReorder the modifiers to comply with the Java Language Specification.(£ß…š
+java:S1319N"vThe type of the "questionArr" object should be an interface such as "List" rather than the implementation "ArrayList".(§ˆ‘Ïıÿÿÿÿ
+E	java:S108p")Either remove or fill this block of code.(Úîø›8¢İøšØ.
+X	java:S125B"<This block of commented-out lines of code should be removed.(„±öÃ8¨ÑÑ‚×.
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õö¢øÿÿÿÿ
 `
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(«Ğüáüÿÿÿÿ
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(©‚ Ûÿÿÿÿÿ
 [
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ù²Ù©
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ù²Ù©
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Û‹Ãƒùÿÿÿÿ
+]	java:S125b"<This block of commented-out lines of code should be removed.(Š¯ø¾úÿÿÿÿ8‘õĞ‚×.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(†óÚõüÿÿÿÿ
+Z
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¹¥‰
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜®»ùıÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(È†‚æùÿÿÿÿ
+u
+java:S2293w"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿ¼®:8Ş¥öšØ.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(á£¿£ùÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ö«„ûÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‘÷†¡
+[
+java:S1124,"EReorder the modifiers to comply with the Java Language Specification.(£ß…š
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(«Ğüáüÿÿÿÿ
+^
+java:S1192 "HDefine a constant instead of duplicating this literal " text, " 8 times.(ê§ËÙ

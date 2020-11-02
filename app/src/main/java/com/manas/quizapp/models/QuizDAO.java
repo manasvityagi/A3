@@ -2,6 +2,7 @@ package com.manas.quizapp.models;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -75,6 +76,7 @@ public class QuizDAO extends SQLiteOpenHelper {
 
 
     public void insertQuestionObject(ArrayList<QuizQuestionsModel> questionArr) {
+        makeSureDBexists();
         SQLiteDatabase db = this.getWritableDatabase();
         String cleanSQL = "DELETE FROM " + TABLE;
         db.execSQL(cleanSQL);
@@ -100,6 +102,17 @@ public class QuizDAO extends SQLiteOpenHelper {
         db.close();
     }
 
+    private void makeSureDBexists() {
+        String sql = "CREATE TABLE " + TABLE + values_base;
+
+        try {
+            this.getWritableDatabase().execSQL(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+        }
+    }
+
 
     // code to get all contacts in a list view
     public List<QuizQuestionsModel> getQuestions(String category, Integer limit) {
@@ -107,28 +120,14 @@ public class QuizDAO extends SQLiteOpenHelper {
         // Select All Query
         category = category.toLowerCase();
         String selectQuery = "SELECT  * FROM " + TABLE +
-                " WHERE " + QUESTION_CATEGORY + "="  + "\'"+category  + "\'"+ " LIMIT " + String.valueOf(limit) ;
-        Log.e("",selectQuery);
+                " WHERE " + QUESTION_CATEGORY + "=" + "\'" + category + "\'" + " LIMIT " + String.valueOf(limit);
+        Log.e("", selectQuery);
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
-
-//                Log.e("app",cursor.getString(0).replace("\"", ""));
-//                Log.e("app",cursor.getString(1).replace("\"", ""));
-//                Log.e("app",cursor.getString(2).replace("\"", ""));
-//                Log.e("app",cursor.getString(3).replace("\"", ""));
-//                Log.e("app",cursor.getString(4).replace("\"", ""));
-//                Log.e("app",cursor.getString(5).replace("\"", ""));
-//                Log.e("app",cursor.getString(6).replace("\"", ""));
-//                Log.e("app",cursor.getString(7).replace("\"", ""));
-//                Log.e("app",cursor.getString(8).replace("\"", ""));
-//                Log.e("app",cursor.getString(9).replace("\"", ""));
-//                Log.e("app",cursor.getString(10).replace("\"", ""));
-//
-
                 QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
                 tempQuestion.setOption1(cursor.getString(0).replace("\"", ""));
                 tempQuestion.setOption2(cursor.getString(1).replace("\"", ""));
