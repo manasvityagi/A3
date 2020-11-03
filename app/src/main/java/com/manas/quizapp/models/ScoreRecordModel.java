@@ -45,16 +45,16 @@ public class ScoreRecordModel {
         this.category = category;
     }
 
-    public Integer getScore() {
-        return score;
+    public String getScore() {
+        return String.valueOf(score);
     }
 
     public void setScore(Integer score) {
         this.score = score;
     }
 
-    public Integer getQuiz_length() {
-        return quiz_length;
+    public String getQuiz_length() {
+        return String.valueOf(quiz_length);
     }
 
     public void setQuiz_length(Integer quiz_length) {
