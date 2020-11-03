@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.RecoverySystem;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -30,6 +32,7 @@ public class QuizActivity extends AppCompatActivity {
     RadioButton radioOption4;
     RadioButton selectedRadioButton;
     Button submitButton;
+    ProgressBar progressBar;
     int quizQuesLength;
     int currentScore = 0;
 
@@ -52,7 +55,7 @@ public class QuizActivity extends AppCompatActivity {
                 checkAnswerAndScore(questionList.get(currentQuestionPointer), selectedAnswer);
                 loadQuestionOnUI(questionList.get(currentQuestionPointer));
                 currentQuestionPointer += 1;
-
+                progressBar.setProgress(currentQuestionPointer * 10);
                 if (currentQuestionPointer == quizQuesLength) {
                     Intent intent = new Intent(QuizActivity.this, FinalScore.class);
                     intent.putExtra("score", String.valueOf(currentScore));
@@ -111,10 +114,15 @@ public class QuizActivity extends AppCompatActivity {
         radioOption4 = (RadioButton) findViewById(R.id.radioButton4);
         submitButton = (Button) findViewById(R.id.submit_answer);
         quesRadioGroup = findViewById(R.id.radioGroup);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+        progressBar.setMax(100);
+        progressBar.setProgress(0);
+        progressBar.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         radioOption1.setSelected(true);
         //Load First Question
         loadQuestionOnUI(questionList.get(0));
         currentQuestionPointer = 1;
+
     }
 
 
