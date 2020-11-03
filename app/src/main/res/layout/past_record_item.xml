@@ -27,7 +27,7 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:padding="2sp"
                 android:paddingVertical="2sp"
-                android:text="Username"
+                android:text="TextView"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
 
