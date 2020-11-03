@@ -117,12 +117,11 @@ public class QuizActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         progressBar.setMax(100);
         progressBar.setProgress(0);
-        progressBar.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        progressBar.setScrollBarStyle(View.SCROLLBARS_INSIDE_INSET);
         radioOption1.setSelected(true);
         //Load First Question
         loadQuestionOnUI(questionList.get(0));
         currentQuestionPointer = 1;
-
     }
 
 

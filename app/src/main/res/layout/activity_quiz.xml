@@ -31,6 +31,9 @@
     <ProgressBar
         android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyleHorizontal"
+        android:outlineAmbientShadowColor="@color/prussianBlue"
+        android:outlineSpotShadowColor="@color/mud_yellow"
+        android:scrollbarStyle="outsideOverlay"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginTop="4dp"
