@@ -1,0 +1,13 @@
+
+>
+java:S1170"!Make this final field static too.(Ë¿Ğø8”îØ.
+X
+java:S1117+";Rename "context" which hides the field declared at line 20.(ûíÚŒ8”îØ.
+]	java:S125*"<This block of commented-out lines of code should be removed.(íˆ¤úÿÿÿÿ8”îØ.
+]	java:S125"<This block of commented-out lines of code should be removed.(¸°ôäşÿÿÿÿ8”îØ.
+H
+java:S1068"+Remove this unused "context" private field.(Ë¿Ğø8”îØ.
+E
+java:S1604'"(Make this anonymous inner class a lambda(Î´³æ8”îØ.
+„
+java:S1488"bImmediately return this expression instead of assigning it to the temporary variable "viewHolder".(µ·¼‘øÿÿÿÿ8”îØ.

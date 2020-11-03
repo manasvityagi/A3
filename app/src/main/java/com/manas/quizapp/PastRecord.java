@@ -1,6 +1,8 @@
 package com.manas.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
@@ -19,8 +21,14 @@ public class PastRecord extends AppCompatActivity {
         ScoreDAO score = new ScoreDAO(getApplicationContext());
         score.createScoreTable();
         score.cleanDB();
-        List<ScoreRecordModel> scoreObjectsArrayList = score.getScore();
 
+        List<ScoreRecordModel>  scoreList = score.getScore();
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        PastRecordAdapter adapter = new PastRecordAdapter(scoreList);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
     }
 }

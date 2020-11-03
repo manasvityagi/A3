@@ -27,3 +27,7 @@ c
 3app/src/main/java/com/manas/quizapp/PastRecord.java,b\4\b485a5bced1100d266226342ff697c3e6da612e3
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
+j
+:app/src/main/java/com/manas/quizapp/PastRecordAdapter.java,d\b\db71edbf8862b9ec55cafca446b61dfd218bfbaa
+d
+4app/src/main/java/com/manas/quizapp/ListAdapter.java,7\4\744f852a4433fb9f4c95af21a402522a85a89035

@@ -49,34 +49,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         });
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull @NotNull ListAdapter.ViewHolder holder, int position) {
-//        final CategoryItemModel myListData = listdata[position];
-//        holder.textView.setText(listdata[position].getDescription());
-//        holder.imageView.setImageResource(listdata[position].getImgId());
-//        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(view.getContext(), "clicked on item: " + myListData.getDescription(), Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
-//    }
-
-//    @Override
-//    public void onBindViewHolder(ViewHolder holder, int position) {
-//        final CategoryItemModel myListData = listdata[position];
-//        holder.textView.setText(listdata[position].getDescription());
-//        holder.imageView.setImageResource(listdata[position].getImgId());
-//        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(view.getContext(), "clicked on item: " + myListData.getDescription(), Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
-//    }
-
 
     @Override
     public int getItemCount() {
@@ -84,9 +56,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;
-        public TextView textView;
-        public RelativeLayout relativeLayout;
+        ImageView imageView;
+        TextView textView;
+        RelativeLayout relativeLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);

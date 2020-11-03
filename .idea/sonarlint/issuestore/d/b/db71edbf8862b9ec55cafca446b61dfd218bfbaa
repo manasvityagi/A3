@@ -1,0 +1,21 @@
+
+m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Ï©çûÿÿÿÿ8€áíØ.
+p	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃöÏùÿÿÿÿ8…ı©íØ.
+K
+java:S1481"0Remove this unused "category_tv" local variable.(²‘ÒÃ8×şªíØ.
+O
+java:S1128"4Remove this unused import 'android.content.Context'.(©Ê‰è8‘•¡äØ.
+N
+java:S1481"3Remove this unused "quiz_length_tv" local variable.(ÊÌ¤Ï8¤İ­íØ.
+l
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(‚Ï©çûÿÿÿÿ8€áíØ.
+K
+java:S1481"0Remove this unused "username_tv" local variable.(ô»×8ŠÅªíØ.
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÌ¤Ï8ó¤­íØ.
+M
+java:S1481"-Remove this unused "score_tv" local variable.(¥ÊŒåıÿÿÿÿ8…­íØ.
+p	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥ÊŒåıÿÿÿÿ8…­íØ.
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô»×8ŠÅªíØ.
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²‘ÒÃ8×şªíØ.
+Y
+java:S1481"9Remove this unused "session_timestamp_tv" local variable.(ÃöÏùÿÿÿÿ8ËãªíØ.

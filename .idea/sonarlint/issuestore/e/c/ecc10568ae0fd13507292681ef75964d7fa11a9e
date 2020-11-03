@@ -1,7 +1,8 @@
 
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(³Ó‹
-v
-java:S2293N"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥÷Ùö8…Â¤Æ×.
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(á£¿£ùÿÿÿÿ
+C	java:S108")Either remove or fill this block of code.(Úîø›8›ªÇØ.
+^
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(á£¿£ùÿÿÿÿ
+Y
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(³Ó‹
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥÷Ùö8…Â¤Æ×.
