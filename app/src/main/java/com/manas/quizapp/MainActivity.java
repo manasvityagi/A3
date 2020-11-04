@@ -1,5 +1,6 @@
 package com.manas.quizapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,12 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.manas.quizapp.models.QuizDAO;
 import com.manas.quizapp.models.QuizQuestionsModel;
 import com.manas.quizapp.models.ScoreDAO;
 import com.manas.quizapp.models.ScoreRecordModel;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,12 +31,19 @@ public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
     Button getMyRecord;
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startQuizBtn = findViewById(R.id.start_quiz_btn);
         getMyRecord = findViewById(R.id.my_record);
+
+        //////////
+ readDataFromFirebase();
 
         //(String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent) {
         startQuizBtn.setOnClickListener(new View.OnClickListener() {
@@ -53,26 +68,48 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void readDataFromFirebase() {
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference myRef = database.child("questions/");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d(TAG, "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    }
+
     JsonObject[] populateDBfromJson() {
         String jsonFileString = getJsonFromAssets("questions.json");
         Gson gson = new Gson();
         JsonObject[] arrQuestions = gson.fromJson(jsonFileString, JsonObject[].class);
 
-        ArrayList<QuizQuestionsModel> qArray =  new ArrayList<QuizQuestionsModel>();;
+        ArrayList<QuizQuestionsModel> qArray = new ArrayList<QuizQuestionsModel>();
+        ;
         QuizDAO helper = new QuizDAO(getApplicationContext());
         for (JsonObject arrQuestion : arrQuestions) {
             QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
 
-            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option1")).replace("\"",""));
-            tempQuestion.setOption2(String.valueOf(arrQuestion.get("Option2")).replace("\"",""));
-            tempQuestion.setOption3(String.valueOf(arrQuestion.get("Option3")).replace("\"",""));
-            tempQuestion.setOption4(String.valueOf(arrQuestion.get("Option4")).replace("\"",""));
-            tempQuestion.setOption5(String.valueOf(arrQuestion.get("Option5")).replace("\"",""));
-            tempQuestion.setOption6(String.valueOf(arrQuestion.get("Option6")).replace("\"",""));
-            tempQuestion.setQuestionStatement(String.valueOf(arrQuestion.get("QuestionStatement")).replace("\"",""));
-            tempQuestion.setCorrectOptionNumber(String.valueOf(arrQuestion.get("correctOptionNumber")).replace("\"",""));
-            tempQuestion.setPictureUrl(String.valueOf(arrQuestion.get("picture_url")).replace("\"",""));
-            tempQuestion.setQuestionCategory(String.valueOf(arrQuestion.get("question_category")).replace("\"",""));
+            tempQuestion.setOption1(String.valueOf(arrQuestion.get("Option1")).replace("\"", ""));
+            tempQuestion.setOption2(String.valueOf(arrQuestion.get("Option2")).replace("\"", ""));
+            tempQuestion.setOption3(String.valueOf(arrQuestion.get("Option3")).replace("\"", ""));
+            tempQuestion.setOption4(String.valueOf(arrQuestion.get("Option4")).replace("\"", ""));
+            tempQuestion.setOption5(String.valueOf(arrQuestion.get("Option5")).replace("\"", ""));
+            tempQuestion.setOption6(String.valueOf(arrQuestion.get("Option6")).replace("\"", ""));
+            tempQuestion.setQuestionStatement(String.valueOf(arrQuestion.get("QuestionStatement")).replace("\"", ""));
+            tempQuestion.setCorrectOptionNumber(String.valueOf(arrQuestion.get("correctOptionNumber")).replace("\"", ""));
+            tempQuestion.setPictureUrl(String.valueOf(arrQuestion.get("picture_url")).replace("\"", ""));
+            tempQuestion.setQuestionCategory(String.valueOf(arrQuestion.get("question_category")).replace("\"", ""));
             tempQuestion.setUserRating(Double.valueOf(String.valueOf(arrQuestion.get("user_rating"))));
             qArray.add(tempQuestion);
         }
