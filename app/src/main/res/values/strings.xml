@@ -6,7 +6,7 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
-    <string name="question_text">Question: The Toyota Ipsum, Picnic, SportsVan or Avensis Verso is a seven-seater multi-purpose vehicle produced by the Japanese automaker Toyota from 1995 to 2009. ... sold at Toyota Corolla Store.</string>
+    <string name="question_text">What to do when you see a Red Light ?.</string>
     <string name="quiz">Quiz</string>
     <string name="start_quiz_title">Start Quiz</string>
     <string name="quiz_up">Quiz Up</string>
