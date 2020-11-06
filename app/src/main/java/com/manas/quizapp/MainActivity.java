@@ -35,12 +35,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -100,8 +102,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         String fileName = writeToFile(response.toString(), getApplicationContext());
-                        String x = readFromFile(getApplicationContext(), fileName);
-                        Log.e("app", x);
+                        String fileContent = readFromFile(getApplicationContext(), fileName);
+                        //This is the read file from the firebase as well as updated for future reference
+                        // We need ti pick up the latest questions file
+                        // get the latest file from directopry based on creation date
+                        Log.e("app", fileContent);
+                        contentOfLatestFile();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -113,6 +119,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
+    }
+
+    private void contentOfLatestFile() {
+        Context cntxt = getApplicationContext();
+        File allFiles = cntxt.getApplicationContext().getFilesDir();
+        Date latest_lastModDate = new Date(0);
+        String most_updated_file_path = "";
+        for (String strFile : allFiles.list()) {
+            File f = cntxt.getFileStreamPath(strFile);
+            Date lastModDate_new = new Date(f.lastModified());
+            if (lastModDate_new.after(latest_lastModDate)) {
+                most_updated_file_path = f.getAbsolutePath();
+            }
+            Log.e("app", "most_updated_file_path : " + most_updated_file_path);
+        }
     }
 
     private String writeToFile(String data, Context context) {
