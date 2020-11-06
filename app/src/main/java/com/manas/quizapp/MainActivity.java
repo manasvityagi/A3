@@ -99,8 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        writeToFile(response.toString(), getApplicationContext());
-                        String x = readFromFile(getApplicationContext());
+                        String fileName = writeToFile(response.toString(), getApplicationContext());
+                        String x = readFromFile(getApplicationContext(), fileName);
                         Log.e("app", x);
                     }
                 }, new Response.ErrorListener() {
@@ -115,25 +115,29 @@ public class MainActivity extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
-    private void writeToFile(String data, Context context) {
+    private String writeToFile(String data, Context context) {
+
+        String file_name = "questions";
         try {
-            String file_name = "questions";
             String timeStamp_post_fix = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
             file_name = file_name + "_" + timeStamp_post_fix + ".json";
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(file_name, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
+
         } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
+
+        return file_name;
     }
 
-    private String readFromFile(Context context) {
+    private String readFromFile(Context context, String fileName) {
 
         String ret = "";
 
         try {
-            InputStream inputStream = context.openFileInput("config.txt");
+            InputStream inputStream = context.openFileInput(fileName);
 
             if (inputStream != null) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
