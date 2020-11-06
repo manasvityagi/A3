@@ -14,11 +14,6 @@ import com.manas.quizapp.models.CategoryItemModel;
 public class ChoseCategory extends AppCompatActivity {
 
     private TextView mTextView;
-    Button btnCat1;
-    Button btnCat2;
-    Button btnCat3;
-    Button btnCat4;
-    Button btnCat5;
     private String ChoseCategory;
 
     @Override
