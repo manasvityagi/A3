@@ -24,6 +24,7 @@ public class PastRecordAdapter extends RecyclerView.Adapter<PastRecordAdapter.My
     }
 
 
+    @NotNull
     @Override
     public PastRecordAdapter.MyViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
@@ -56,11 +57,11 @@ public class PastRecordAdapter extends RecyclerView.Adapter<PastRecordAdapter.My
 
         public MyViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
-            this.usernameTv = (TextView) itemView.findViewById(R.id.userTextView);
-            this.sessionTimestampTv = (TextView) itemView.findViewById(R.id.timeStampTextView);
-            this.categoryTv = (TextView) itemView.findViewById(R.id.categoryTextView);
-            this.scoreTv = (TextView) itemView.findViewById(R.id.scoreTextView);
-            this.quizLengthTv = (TextView) itemView.findViewById(R.id.quizLengthTextView);
+            this.usernameTv = itemView.findViewById(R.id.userTextView);
+            this.sessionTimestampTv = itemView.findViewById(R.id.timeStampTextView);
+            this.categoryTv = itemView.findViewById(R.id.categoryTextView);
+            this.scoreTv = itemView.findViewById(R.id.scoreTextView);
+            this.quizLengthTv = itemView.findViewById(R.id.quizLengthTextView);
         }
     }
 }
