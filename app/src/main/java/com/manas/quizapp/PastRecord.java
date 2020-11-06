@@ -39,7 +39,7 @@ public class PastRecord extends AppCompatActivity {
 
         List<ScoreRecordModel> scoreList = score.getScore();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         PastRecordAdapter adapter = new PastRecordAdapter(scoreList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -30,15 +30,11 @@ public class ChoseCategory extends AppCompatActivity {
                 new CategoryItemModel("Theory", android.R.drawable.ic_menu_agenda),
         };
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.categoryRecyclerList);
+        RecyclerView recyclerView = findViewById(R.id.categoryRecyclerList);
         ListAdapter adapter = new ListAdapter(myListData);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
 
-    private void navigate(String choseCategory) {
-        Intent i = new Intent(ChoseCategory.this, QuizLength.class);
-        startActivity(i);
-    }
 }
