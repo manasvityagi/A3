@@ -32,6 +32,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import org.apache.commons.lang3.StringUtils;
+
 
 public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
@@ -75,13 +77,15 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        String reply = response.toString();
+                        String reply = response.replace("\n", "").replace("\r", "");
+                        String latestFileContent = readFromFile(nameOfLatestFile()).replace("\n", "").replace("\r", "");
+                        String diff = StringUtils.difference(reply, latestFileContent);
 
-                        if (reply.equals(readFromFile(nameOfLatestFile()))) {
+                        if (reply.equals(latestFileContent)) {
+                            Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
+                        } else {
                             writeToFile(reply);
                             Toast.makeText(MainActivity.this, "Questions Updated" + nameOfLatestFile(), Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }, error -> Log.e("app", "That didn't work!"));
