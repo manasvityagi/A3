@@ -1,25 +1,25 @@
 
 i
-java:S1104"SMake option4 a static final constant or non-public and provide accessors if needed.(¤ßŞÁ
-i
 java:S1104"SMake option5 a static final constant or non-public and provide accessors if needed.(¢à
-l
-java:S1104"VMake userRating a static final constant or non-public and provide accessors if needed.(Á÷Ûœ
-z
-java:S1104"_Make correctOptionNumber a static final constant or non-public and provide accessors if needed.(ä™äşÿÿÿÿ
-x
-java:S1104"]Make questionStatement a static final constant or non-public and provide accessors if needed.(™Ÿûıÿÿÿÿ
 i
 java:S1104"SMake option6 a static final constant or non-public and provide accessors if needed.(×»Ö»
-i
-java:S1104"SMake option1 a static final constant or non-public and provide accessors if needed.(ú¾ÿË
-W	java:S107"BConstructor has 11 parameters, which is greater than 7 authorized.(¨ŸòÇ
-w
-java:S1104"\Make questionCategory a static final constant or non-public and provide accessors if needed.(¬İì»úÿÿÿÿ
+q
+java:S1104"VMake pictureUrl a static final constant or non-public and provide accessors if needed.(‘¾ÈÇÿÿÿÿÿ
 n
 java:S1104	"SMake option2 a static final constant or non-public and provide accessors if needed.(ÇŠñóùÿÿÿÿ
+W	java:S107"BConstructor has 11 parameters, which is greater than 7 authorized.(¨ŸòÇ
 i
 java:S1104
 "SMake option3 a static final constant or non-public and provide accessors if needed.(úüµñ
-q
-java:S1104"VMake pictureUrl a static final constant or non-public and provide accessors if needed.(‘¾ÈÇÿÿÿÿÿ
+i
+java:S1104"SMake option1 a static final constant or non-public and provide accessors if needed.(ú¾ÿË
+i
+java:S1104"SMake option4 a static final constant or non-public and provide accessors if needed.(¤ßŞÁ
+x
+java:S1104"]Make questionStatement a static final constant or non-public and provide accessors if needed.(™Ÿûıÿÿÿÿ
+w
+java:S1104"\Make questionCategory a static final constant or non-public and provide accessors if needed.(¬İì»úÿÿÿÿ
+z
+java:S1104"_Make correctOptionNumber a static final constant or non-public and provide accessors if needed.(ä™äşÿÿÿÿ
+l
+java:S1104"VMake userRating a static final constant or non-public and provide accessors if needed.(Á÷Ûœ

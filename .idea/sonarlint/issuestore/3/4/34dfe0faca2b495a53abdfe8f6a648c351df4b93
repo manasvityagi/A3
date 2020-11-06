@@ -1,34 +1,66 @@
 
-•
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
-O	java:S125"<This block of commented-out lines of code should be removed.(¬«íû
-E
-java:S1135"2Complete the task associated to this TODO comment.(™øşL
-K
-java:S1135"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
-K
-java:S1135"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
-[	java:S125"<This block of commented-out lines of code should be removed.( ˜Şßÿÿÿÿÿ8ÇıüÇ×.
-R
-java:S3400"9Remove this method and declare a constant for this value.(Ö§”Óşÿÿÿÿ
-F
-java:S1135"2Complete the task associated to this TODO comment.(Íàş¡
-5
-java:S1116"Remove this empty statement.(èÉåÑüÿÿÿÿ
-A
-java:S1604"(Make this anonymous inner class a lambda(ŞÊ”µüÿÿÿÿ
-`
-java:S2095"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8ìø’ü×.
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëı‰ºÿÿÿÿÿ
-r
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(èÉåÑüÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(Ä¨ŠÁ8ËàÑ×.
+H
+java:S1135¾"2Complete the task associated to this TODO comment.(™øşL
 C
-java:S1604"(Make this anonymous inner class a lambda(±»ìÊ8ÜªÑ×.
+java:S16048"(Make this anonymous inner class a lambda(ŞÊ”µüÿÿÿÿ
 c
-java:S2674"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹şÿÿÿÿ
-R
-java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
+java:S2095š"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8ìø’ü×.
+
+java:S1186É"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹şÿÿÿÿ
+]	java:S1257"<This block of commented-out lines of code should be removed.( ˜Şßÿÿÿÿÿ8ÇıüÇ×.
+˜
+java:S1186µ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
+I
+java:S1135¹"2Complete the task associated to this TODO comment.(Íàş¡
+R	java:S125¿"<This block of commented-out lines of code should be removed.(¬«íû
+E
+java:S1604A"(Make this anonymous inner class a lambda(±»ìÊ8ÜªÑ×.
+
+java:S1186º"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëı‰ºÿÿÿÿÿ
+N
+java:S1135´"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
+N
+java:S1135È"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
+U
+java:S3400±"9Remove this method and declare a constant for this value.(Ö§”Óşÿÿÿÿ
+f
+java:S2674Ô"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
+U
+java:S4719×"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
+l
+java:S2095Ñ"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ8Í¶üØÙ.
+X	java:S110'"<This class has 9 parents which is greater than 5 authorized.(²Ú±8Í¶üØÙ.
+r	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÂ¶şÿÿÿÿ8Í¶üØÙ.
+J
+java:S1604J"(Make this anonymous inner class a lambda(›¯¤ûùÿÿÿÿ8Í¶üØÙ.
+E
+java:S1604~"(Make this anonymous inner class a lambda(Ãºíõ8Í¶üØÙ.
+E
+java:S1604‰"(Make this anonymous inner class a lambda(²» g8Í¶üØÙ.
+`
+java:S1128">Remove this unused import 'com.manas.quizapp.models.ScoreDAO'.(—ØÌÀşÿÿÿÿ8Í¶üØÙ.
+U
+java:S1128"8Remove this unused import 'androidx.annotation.NonNull'.(ˆÛúÜ8Í¶üØÙ.
+h
+java:S1128"FRemove this unused import 'com.manas.quizapp.models.ScoreRecordModel'.(ÆÚûüÿÿÿÿ8Í¶üØÙ.
+U
+java:S1128"3Remove this unused import 'org.json.JSONException'.(¹Ó·úÿÿÿÿ8Í¶üØÙ.
+M
+java:S1128%"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Í¶üØÙ.
+`
+java:S1128">Remove this unused import 'org.jetbrains.annotations.NotNull'.(éš®ïøÿÿÿÿ8Í¶üØÙ.
+Q
+java:S1128"/Remove this unused import 'org.json.JSONArray'.(¬¸Ê’üÿÿÿÿ8Í¶üØÙ.
+X	java:S125E"<This block of commented-out lines of code should be removed.(ı©Ê8Í¶üØÙ.
+]
+java:S1854["@Remove this useless assignment to local variable "questionJson".(ôªĞö8Í¶üØÙ.
+c
+java:S1126l"AReplace this if-then-else statement by a single return statement.(§™Ÿ½üÿÿÿÿ8Í¶üØÙ.
+w
+java:S2293˜"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜ÊÏŞ8Í¶üØÙ.
+?
+java:S1116™"Remove this empty statement.(Åñ­õşÿÿÿÿ8Í¶üØÙ.
+N
+java:S1481["1Remove this unused "questionJson" local variable.(ôªĞö8Í¶üØÙ.
+_
+java:S1144u"=Remove this unused private "getQuestionsFromFirebase" method.( ¯¬öÿÿÿÿÿ8Í¶üØÙ.

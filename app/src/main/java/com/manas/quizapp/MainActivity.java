@@ -5,9 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +29,9 @@ import com.manas.quizapp.models.ScoreDAO;
 import com.manas.quizapp.models.ScoreRecordModel;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,12 +39,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "mainActivity";
     Button startQuizBtn;
     Button getMyRecord;
-
-
-
-
+    Button updateQuestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         startQuizBtn = findViewById(R.id.start_quiz_btn);
         getMyRecord = findViewById(R.id.my_record);
-
+        updateQuestions = findViewById(R.id.update_questions);
         //////////
- readDataFromFirebase();
+
 
         //(String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent) {
         startQuizBtn.setOnClickListener(new View.OnClickListener() {
@@ -58,36 +67,44 @@ public class MainActivity extends AppCompatActivity {
         getMyRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ScoreDAO score = new ScoreDAO(getApplicationContext());
-//                score.createScoreTable();
-//                score.cleanDB();
-//                List<ScoreRecordModel>  scoreObjectsArrayList = score.getScore();
-                Intent i = new Intent(MainActivity.this, PastRecord.class);
-                startActivity(i);
+
+//                Intent i = new Intent(MainActivity.this, PastRecord.class);
+//                startActivity(i);
+            }
+        });
+
+        updateQuestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateQuestionsFromCloud();
             }
         });
     }
 
-    private void readDataFromFirebase() {
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference myRef = database.child("questions/");
 
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Value is: " + value);
-            }
+    public void updateQuestionsFromCloud() {
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://static-pottery-289106.firebaseio.com/.json";
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
 
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+            public void onErrorResponse(VolleyError error) {
+                //textView.setText("That didn't work!");
+                Log.e("app", "That didn't work!");
             }
         });
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
     }
+
 
     JsonObject[] populateDBfromJson() {
         String jsonFileString = getJsonFromAssets("questions.json");
@@ -118,33 +135,18 @@ public class MainActivity extends AppCompatActivity {
         return arrQuestions;
     }
 
-    String getJsonFromCloud() {
-        return " ";
-    }
-
-    // TODO: Populate a database, via a json file.
-    void readJsonDB() {
-
-    }
-
-    // TODO: Create an array of objects
-    void createQuestionArray() {
-
-    }
-
-//    // TODO: Insert the objects in a db
-//    void insertArrayToDB() {
-//        QuizQuestionsModel[] arr = getJsonFromFile();
-//
-//        for (int i = 0; i < arr.length; i++) {
-//            QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
-//            tempQuestion.setOption1(arr[i].getOption1());
-//        }
-//    }
-
-    // TODO: Read the db, create the array of objects again
-    void getListOfQuestionObjects() {
-
+    public static boolean isJson(String Json) {
+        Gson gson = new Gson();
+        try {
+            gson.fromJson(Json, Object.class);
+            Object jsonObjType = gson.fromJson(Json, Object.class).getClass();
+            if (jsonObjType.equals(String.class)) {
+                return false;
+            }
+            return true;
+        } catch (com.google.gson.JsonSyntaxException ex) {
+            return false;
+        }
     }
 
     String getJsonFromAssets(String fileName) {
