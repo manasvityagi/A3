@@ -28,16 +28,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "mainActivity";
     Button startQuizBtn;
     Button getMyRecord;
     Button updateQuestions;
-    private final String FILE_NAME = "questions.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,40 +45,29 @@ public class MainActivity extends AppCompatActivity {
         startQuizBtn = findViewById(R.id.start_quiz_btn);
         getMyRecord = findViewById(R.id.my_record);
         updateQuestions = findViewById(R.id.update_questions);
-        //////////
 
-        //(String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent) {
-        startQuizBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                populateDBfromJson();
-                Intent i = new Intent(MainActivity.this, ChoseCategory.class);
-                startActivity(i);
-            }
+        startQuizBtn.setOnClickListener(v -> {
+            // In runtime the app works on sqlite database
+            populateDBfromJson();
+            Intent i = new Intent(MainActivity.this, ChoseCategory.class);
+            startActivity(i);
         });
 
-        getMyRecord.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-//                Intent i = new Intent(MainActivity.this, PastRecord.class);
-//                startActivity(i);
-            }
+        getMyRecord.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, PastRecord.class);
+            startActivity(i);
         });
 
-        updateQuestions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateQuestionsFromCloud();
-
-
-            }
+        updateQuestions.setOnClickListener(v -> {
+            //pulls the latest question list and updates the local file
+            //Updates only if there is an updated, otherwise does not overwrites the file
+            updateQuestionsFromCloud();
         });
     }
 
 
     public void updateQuestionsFromCloud() {
-        // Instantiate the RequestQueue.
+
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://static-pottery-289106.firebaseio.com/.json";
         // Request a string response from the provided URL.
@@ -89,27 +77,14 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         String reply = response.toString();
 
-
                         if (reply.equals(readFromFile(nameOfLatestFile()))) {
-                            //This is the read file from the firebase as well as updated for future reference
-                            // We need ti pick up the latest questions file
-                            // get the latest file from directory based on creation date
-                            writeToFile(reply, getApplicationContext());
+                            writeToFile(reply);
                             Toast.makeText(MainActivity.this, "Questions Updated" + nameOfLatestFile(), Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
                         }
-
-
-                        nameOfLatestFile();
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //textView.setText("That didn't work!");
-                Log.e("app", "That didn't work!");
-            }
-        });
+                }, error -> Log.e("app", "That didn't work!"));
 
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
@@ -118,28 +93,29 @@ public class MainActivity extends AppCompatActivity {
     private String nameOfLatestFile() {
         Context cntxt = getApplicationContext();
         File allFiles = cntxt.getApplicationContext().getFilesDir();
-        Date latest_lastModDate = new Date(0);
-        String most_updated_file_name = FILE_NAME;
+        Date latestLastModDate = new Date(0);
+        String mostUpdatedFileName = "questions.json";
 
         for (String strFile : allFiles.list()) {
             File f = cntxt.getFileStreamPath(strFile);
-            Date lastModDate_new = new Date(f.lastModified());
-            if (lastModDate_new.after(latest_lastModDate)) {
-                most_updated_file_name = f.getName();
+            Date lastModDateNew = new Date(f.lastModified());
+            if (lastModDateNew.after(latestLastModDate)) {
+                mostUpdatedFileName = f.getName();
             }
-            Log.e("app", "most_updated_file_name : " + most_updated_file_name);
+            Log.e("app", "most_updated_file_name : " + mostUpdatedFileName);
         }
 
-        return most_updated_file_name;
+        return mostUpdatedFileName;
     }
 
-    private String writeToFile(String data, Context context) {
-
-        String file_name = "questions";
+    private String writeToFile(String data) {
+        Context context = getApplicationContext();
+        // base file name
+        String fileName = "questions";
         try {
-            String timeStamp_post_fix = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
-            file_name = file_name + "_" + timeStamp_post_fix + ".json";
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(file_name, Context.MODE_PRIVATE));
+            String timeStampPostFix = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+            fileName = fileName + "_" + timeStampPostFix + ".json";
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(fileName, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
 
@@ -147,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             Log.e("Exception", "File write failed: " + e.toString());
         }
 
-        return file_name;
+        return fileName;
     }
 
     private String readFromFile(String fileName) {
@@ -181,13 +157,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     JsonObject[] populateDBfromJson() {
-        nameOfLatestFile();
+
         String jsonFileString = getJsonFromAssets(nameOfLatestFile());
         Gson gson = new Gson();
         JsonObject[] arrQuestions = gson.fromJson(jsonFileString, JsonObject[].class);
 
-        ArrayList<QuizQuestionsModel> qArray = new ArrayList<QuizQuestionsModel>();
-        ;
+        ArrayList<QuizQuestionsModel> qArray = new ArrayList<>();
+
         QuizDAO helper = new QuizDAO(getApplicationContext());
         for (JsonObject arrQuestion : arrQuestions) {
             QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
@@ -215,10 +191,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             gson.fromJson(Json, Object.class);
             Object jsonObjType = gson.fromJson(Json, Object.class).getClass();
-            if (jsonObjType.equals(String.class)) {
-                return false;
-            }
-            return true;
+            return !jsonObjType.equals(String.class);
         } catch (com.google.gson.JsonSyntaxException ex) {
             return false;
         }
@@ -234,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
             is.read(buffer);
             is.close();
 
-            jsonString = new String(buffer, "UTF-8");
+            jsonString = new String(buffer, StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
