@@ -1,38 +1,25 @@
 package com.manas.quizapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.manas.quizapp.models.QuizDAO;
 import com.manas.quizapp.models.QuizQuestionsModel;
-import com.manas.quizapp.models.ScoreDAO;
-import com.manas.quizapp.models.ScoreRecordModel;
-
-import org.jetbrains.annotations.NotNull;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -43,7 +30,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
     Button getMyRecord;
     Button updateQuestions;
+    private final String FILE_NAME = "questions.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         getMyRecord = findViewById(R.id.my_record);
         updateQuestions = findViewById(R.id.update_questions);
         //////////
-
 
         //(String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent) {
         startQuizBtn.setOnClickListener(new View.OnClickListener() {
@@ -101,13 +87,21 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        String fileName = writeToFile(response.toString(), getApplicationContext());
-                        String fileContent = readFromFile(getApplicationContext(), fileName);
-                        //This is the read file from the firebase as well as updated for future reference
-                        // We need ti pick up the latest questions file
-                        // get the latest file from directopry based on creation date
-                        Log.e("app", fileContent);
-                        contentOfLatestFile();
+                        String reply = response.toString();
+
+
+                        if (reply.equals(readFromFile(nameOfLatestFile()))) {
+                            //This is the read file from the firebase as well as updated for future reference
+                            // We need ti pick up the latest questions file
+                            // get the latest file from directory based on creation date
+                            writeToFile(reply, getApplicationContext());
+                            Toast.makeText(MainActivity.this, "Questions Updated" + nameOfLatestFile(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                        nameOfLatestFile();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -121,19 +115,22 @@ public class MainActivity extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
-    private void contentOfLatestFile() {
+    private String nameOfLatestFile() {
         Context cntxt = getApplicationContext();
         File allFiles = cntxt.getApplicationContext().getFilesDir();
         Date latest_lastModDate = new Date(0);
-        String most_updated_file_path = "";
+        String most_updated_file_name = FILE_NAME;
+
         for (String strFile : allFiles.list()) {
             File f = cntxt.getFileStreamPath(strFile);
             Date lastModDate_new = new Date(f.lastModified());
             if (lastModDate_new.after(latest_lastModDate)) {
-                most_updated_file_path = f.getAbsolutePath();
+                most_updated_file_name = f.getName();
             }
-            Log.e("app", "most_updated_file_path : " + most_updated_file_path);
+            Log.e("app", "most_updated_file_name : " + most_updated_file_name);
         }
+
+        return most_updated_file_name;
     }
 
     private String writeToFile(String data, Context context) {
@@ -153,8 +150,8 @@ public class MainActivity extends AppCompatActivity {
         return file_name;
     }
 
-    private String readFromFile(Context context, String fileName) {
-
+    private String readFromFile(String fileName) {
+        Context context = getApplicationContext();
         String ret = "";
 
         try {
@@ -184,7 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     JsonObject[] populateDBfromJson() {
-        String jsonFileString = getJsonFromAssets("questions.json");
+        nameOfLatestFile();
+        String jsonFileString = getJsonFromAssets(nameOfLatestFile());
         Gson gson = new Gson();
         JsonObject[] arrQuestions = gson.fromJson(jsonFileString, JsonObject[].class);
 
