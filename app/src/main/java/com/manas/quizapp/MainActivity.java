@@ -95,21 +95,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String nameOfLatestFile() {
-        Context cntxt = getApplicationContext();
-        File allFiles = cntxt.getApplicationContext().getFilesDir();
-        Date latestLastModDate = new Date(0);
-        String mostUpdatedFileName = "questions.json";
-
-        for (String strFile : allFiles.list()) {
-            File f = cntxt.getFileStreamPath(strFile);
-            Date lastModDateNew = new Date(f.lastModified());
-            if (lastModDateNew.after(latestLastModDate)) {
-                mostUpdatedFileName = f.getName();
-            }
-            Log.e("app", "most_updated_file_name : " + mostUpdatedFileName);
-        }
-
-        return mostUpdatedFileName;
+//        Context cntxt = getApplicationContext();
+//        File allFiles = cntxt.getApplicationContext().getFilesDir();
+//        Date latestLastModDate = new Date(0);
+//        String mostUpdatedFileName = "questions.json";
+//
+//        for (String strFile : allFiles.list()) {
+//            File f = cntxt.getFileStreamPath(strFile);
+//            Date lastModDateNew = new Date(f.lastModified());
+//            if (lastModDateNew.after(latestLastModDate)) {
+//                mostUpdatedFileName = f.getName();
+//            }
+//            Log.e("app", "most_updated_file_name : " + mostUpdatedFileName);
+//        }
+//
+//        return mostUpdatedFileName;
+        return "questions.json";
     }
 
     private void writeToFile(String data) {
@@ -117,8 +118,10 @@ public class MainActivity extends AppCompatActivity {
         // base file name
         String fileName = "questions";
         try {
-            String timeStampPostFix = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
-            fileName = fileName + "_" + timeStampPostFix + ".json";
+
+            //String timeStampPostFix = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+            //fileName = fileName + "_" + timeStampPostFix + ".json";
+            fileName = "questions.json";
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(fileName, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
@@ -126,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
-
     }
 
     private String readFromFile(String fileName) {
