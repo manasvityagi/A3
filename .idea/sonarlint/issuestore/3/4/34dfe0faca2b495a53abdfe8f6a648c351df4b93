@@ -1,26 +1,26 @@
 
-r
-java:S2095z"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(ï­Ìöşÿÿÿÿ8¿‘°úÙ.
-Z
-java:S2589Œ"7Remove this expression which always evaluates to "true"(¦·úÓøÿÿÿÿ8¿‘°úÙ.
-Z
-java:S1854R"8Remove this useless assignment to local variable "diff".(‚ÿ¥ûùÿÿÿÿ8’÷äúÙ.
-X
-java:S1128";Remove this unused import 'com.android.volley.VolleyError'.(­°Ñ”8•Œ÷ùÙ.
-j
-java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ŠËÌî8¿‘°úÙ.
-s	java:S117Á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÂ¶şÿÿÿÿ8¿‘°úÙ.
 J
-java:S1604M"(Make this anonymous inner class a lambda(±æÿÚıÿÿÿÿ8ÑëÅùÙ.
+java:S1604N"(Make this anonymous inner class a lambda(±æÿÚıÿÿÿÿ8ÑëÅùÙ.
 c
-java:S2095«"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8¿‘°úÙ.
-K
-java:S1481R")Remove this unused "diff" local variable.(‚ÿ¥ûùÿÿÿÿ8’÷äúÙ.
+java:S1128$"ARemove this unused import 'org.apache.commons.lang3.StringUtils'.(Øœ¼ºúÿÿÿÿ8¡³ÏŠÚ.
+j
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ŠËÌî8¿‘°úÙ.
+s	java:S117Â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÂ¶şÿÿÿÿ8¿‘°úÙ.
+X	java:S125z"<This block of commented-out lines of code should be removed.(¯Ìó˜8Ã»ôŒÚ.
+Z
+java:S2589"7Remove this expression which always evaluates to "true"(¦·úÓøÿÿÿÿ8¿‘°úÙ.
 I
-java:S1602?",Remove useless curly braces around statement(¿ÜƒÑ8µ¥êùÙ.
-l
-java:S2095Ğ"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ8¿‘°úÙ.
-m
-java:S2674Ó"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ8¿‘°úÙ.
+java:S1602@",Remove useless curly braces around statement(¿ÜƒÑ8µ¥êùÙ.
+X	java:S125b"<This block of commented-out lines of code should be removed.(¦ıÃ§8Õ±öŒÚ.
 P
 java:S1128".Remove this unused import 'android.view.View'.(Ø½­äşÿÿÿÿ8‡ˆöùÙ.
+X
+java:S1128";Remove this unused import 'com.android.volley.VolleyError'.(­°Ñ”8•Œ÷ùÙ.
+[
+java:S1128">Remove this unused import 'java.nio.charset.StandardCharsets'.(ï˜ŞÛ8–šŠÚ.
+r
+java:S2095}"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(ï­Ìöşÿÿÿÿ8¿‘°úÙ.
+c
+java:S2095¬"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8Ò¯÷ŒÚ.
+[
+java:S3400q"9Remove this method and declare a constant for this value.(¥óÌÆùÿÿÿÿ8Ò¯÷ŒÚ.
