@@ -39,7 +39,7 @@ public class PastRecordAdapter extends RecyclerView.Adapter<PastRecordAdapter.My
         holder.sessionTimestampTv.setText(recordList.get(position).getSessionTS());
         holder.categoryTv.setText(recordList.get(position).getCategory());
         holder.scoreTv.setText(recordList.get(position).getScore());
-        holder.quizLengthTv.setText(recordList.get(position).getQuiz_length());
+        holder.quizLengthTv.setText(recordList.get(position).getQuizLength());
 
     }
 

@@ -27,21 +27,22 @@ public class QuizDAO extends SQLiteOpenHelper {
     public final static String PICTURE_URL = "pictureUrl";
     public final static String QUESTION_CATEGORY = "questionCategory";
     public final static String RATING = "rating";
-    public final static String values_base = " ("
+    public static final String TEXT = " text, ";
+    public final static String VALUES_BASE = " ("
 
-            + OP1 + " text, "
-            + OP2 + " text, "
-            + OP3 + " text, "
-            + OP4 + " text, "
-            + OP5 + " text, "
-            + OP6 + " text, "
-            + QUESTION_STATEMENT + " TEXT, "
-            + CORRECT_OPTION + " TEXT, "
-            + PICTURE_URL + " text, "
-            + QUESTION_CATEGORY + " text, "
+            + OP1 + TEXT
+            + OP2 + TEXT
+            + OP3 + TEXT
+            + OP4 + TEXT
+            + OP5 + TEXT
+            + OP6 + TEXT
+            + QUESTION_STATEMENT + TEXT
+            + CORRECT_OPTION + TEXT
+            + PICTURE_URL + TEXT
+            + QUESTION_CATEGORY + TEXT
             + RATING + " INTEGER );";
 
-    public final static String insert_base = " ("
+    public final static String INSERT_BASE = " ("
             + OP1 + " , "
             + OP2 + " , "
             + OP3 + " , "
@@ -62,8 +63,7 @@ public class QuizDAO extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        String sql = "CREATE TABLE " + TABLE + values_base;
-//        Log.e("sql", sql);
+        String sql = "CREATE TABLE " + TABLE + VALUES_BASE;
         sqLiteDatabase.execSQL(sql);
 
     }
@@ -82,7 +82,7 @@ public class QuizDAO extends SQLiteOpenHelper {
         db.execSQL(cleanSQL);
 
         for (QuizQuestionsModel q : questionArr) {
-            String insertQuery = "INSERT INTO " + TABLE + " " + insert_base +
+            String insertQuery = "INSERT INTO " + TABLE + " " + INSERT_BASE +
                     " VALUES(\"OPX1\", \"OPX2\", \"OPX3\", \"OPX4\", \"OPX5\", \"OPX6\", \"QSX\", \"CONX\", \"URL\", \"QCX\", 4);";
 
             insertQuery = insertQuery.replace("OPX1", q.getOption1());
@@ -95,7 +95,7 @@ public class QuizDAO extends SQLiteOpenHelper {
             insertQuery = insertQuery.replace("CONX", q.getCorrectOptionNumber());
             insertQuery = insertQuery.replace("URL", q.getPictureUrl());
             insertQuery = insertQuery.replace("QCX", q.getQuestionCategory());
-            //Log.e("app", insertQuery);
+
             db.execSQL(insertQuery);
         }
 
@@ -103,24 +103,23 @@ public class QuizDAO extends SQLiteOpenHelper {
     }
 
     private void makeSureDBexists() {
-        String sql = "CREATE TABLE " + TABLE + values_base;
+        String sql = "CREATE TABLE " + TABLE + VALUES_BASE;
 
         try {
             this.getWritableDatabase().execSQL(sql);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
         }
     }
 
 
     // code to get all contacts in a list view
     public List<QuizQuestionsModel> getQuestions(String category, Integer limit) {
-        List<QuizQuestionsModel> questionList = new ArrayList<QuizQuestionsModel>();
+        List<QuizQuestionsModel> questionList = new ArrayList<>();
         // Select All Query
         category = category.toLowerCase();
         String selectQuery = "SELECT  * FROM " + TABLE +
-                " WHERE " + QUESTION_CATEGORY + "=" + "\'" + category + "\'" + " LIMIT " + String.valueOf(limit);
+                " WHERE " + QUESTION_CATEGORY + "=" + "\'" + category + "\'" + " LIMIT " + limit;
         Log.e("", selectQuery);
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

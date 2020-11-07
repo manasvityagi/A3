@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void updateQuestionsFromCloud() {
         //1. Make sure file exists in Assets
         //2. Make sure file exists in Context
@@ -103,13 +102,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void writeFileToContext(String data) {
         Context context = getApplicationContext();
+
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(QUESTION_LOCAL_FILE_NAME, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
         } catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
+            e.printStackTrace();
+        } finally {
         }
+
     }
 
 
@@ -187,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         helper.insertQuestionObject(qArray);
+        helper.close();
         return arrQuestions;
     }
 

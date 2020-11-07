@@ -1,20 +1,20 @@
 package com.manas.quizapp.models;
 
 public class ScoreRecordModel {
-    String Username;
-    String SessionTS;
+    String username;
+    String sessionTS;
     String category;
     Integer score;
-    Integer quiz_length;
-    double correct_percent;
+    Integer quizLength;
+    double correctPercent;
 
-    public ScoreRecordModel(String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent) {
-        Username = username;
-        SessionTS = sessionTS;
+    public ScoreRecordModel(String username, String sessionTS, String category, Integer score, Integer quizLength, double correctPercent) {
+        this.username = username;
+        this.sessionTS = sessionTS;
         this.category = category;
         this.score = score;
-        this.quiz_length = quiz_length;
-        this.correct_percent = correct_percent;
+        this.quizLength = quizLength;
+        this.correctPercent = correctPercent;
     }
 
     public ScoreRecordModel() {
@@ -22,19 +22,19 @@ public class ScoreRecordModel {
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getSessionTS() {
-        return SessionTS;
+        return sessionTS;
     }
 
     public void setSessionTS(String sessionTS) {
-        SessionTS = sessionTS;
+        this.sessionTS = sessionTS;
     }
 
     public String getCategory() {
@@ -53,31 +53,31 @@ public class ScoreRecordModel {
         this.score = score;
     }
 
-    public String getQuiz_length() {
-        return String.valueOf(quiz_length);
+    public String getQuizLength() {
+        return String.valueOf(quizLength);
     }
 
-    public void setQuiz_length(Integer quiz_length) {
-        this.quiz_length = quiz_length;
+    public void setQuizLength(Integer quizLength) {
+        this.quizLength = quizLength;
     }
 
-    public double getCorrect_percent() {
-        return correct_percent;
+    public double getCorrectPercent() {
+        return correctPercent;
     }
 
-    public void setCorrect_percent(Double correct_percent) {
-        this.correct_percent = correct_percent;
+    public void setCorrectPercent(Double correctPercent) {
+        this.correctPercent = correctPercent;
     }
 
     @Override
     public String toString() {
         return "ScoreRecordModel{" +
-                "Username='" + Username + '\'' +
-                ", SessionTS='" + SessionTS + '\'' +
+                "Username='" + username + '\'' +
+                ", SessionTS='" + sessionTS + '\'' +
                 ", category='" + category + '\'' +
                 ", score=" + score +
-                ", quiz_length=" + quiz_length +
-                ", correct_percent=" + correct_percent +
+                ", quiz_length=" + quizLength +
+                ", correct_percent=" + correctPercent +
                 '}';
     }
 
@@ -88,7 +88,7 @@ public class ScoreRecordModel {
 
         ScoreRecordModel that = (ScoreRecordModel) o;
 
-        if (Double.compare(that.getCorrect_percent(), getCorrect_percent()) != 0)
+        if (Double.compare(that.getCorrectPercent(), getCorrectPercent()) != 0)
             return false;
         if (getUsername() != null ? !getUsername().equals(that.getUsername()) : that.getUsername() != null)
             return false;
@@ -98,7 +98,7 @@ public class ScoreRecordModel {
             return false;
         if (getScore() != null ? !getScore().equals(that.getScore()) : that.getScore() != null)
             return false;
-        return getQuiz_length() != null ? getQuiz_length().equals(that.getQuiz_length()) : that.getQuiz_length() == null;
+        return getQuizLength() != null ? getQuizLength().equals(that.getQuizLength()) : that.getQuizLength() == null;
     }
 
     @Override
@@ -109,8 +109,8 @@ public class ScoreRecordModel {
         result = 31 * result + (getSessionTS() != null ? getSessionTS().hashCode() : 0);
         result = 31 * result + (getCategory() != null ? getCategory().hashCode() : 0);
         result = 31 * result + (getScore() != null ? getScore().hashCode() : 0);
-        result = 31 * result + (getQuiz_length() != null ? getQuiz_length().hashCode() : 0);
-        temp = Double.doubleToLongBits(getCorrect_percent());
+        result = 31 * result + (getQuizLength() != null ? getQuizLength().hashCode() : 0);
+        temp = Double.doubleToLongBits(getCorrectPercent());
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }

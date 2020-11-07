@@ -62,10 +62,10 @@ public class ScoreDAO extends SQLiteOpenHelper {
 
         insertQuery = insertQuery.replace("TSX", scoreObj.getSessionTS());
         insertQuery = insertQuery.replace("CTX", scoreObj.getCategory());
-        insertQuery = insertQuery.replace("LEN", String.valueOf(scoreObj.getQuiz_length()));
-        insertQuery = insertQuery.replace("SRX", String.valueOf(scoreObj.getCorrect_percent()));
+        insertQuery = insertQuery.replace("LEN", String.valueOf(scoreObj.getQuizLength()));
+        insertQuery = insertQuery.replace("SRX", String.valueOf(scoreObj.getCorrectPercent()));
         insertQuery = insertQuery.replace("USX", scoreObj.getUsername());
-        insertQuery = insertQuery.replace("CRKT", String.valueOf(scoreObj.getCorrect_percent()));
+        insertQuery = insertQuery.replace("CRKT", String.valueOf(scoreObj.getCorrectPercent()));
 
         Log.e("app", insertQuery);
         db.execSQL(insertQuery);
@@ -91,10 +91,10 @@ public class ScoreDAO extends SQLiteOpenHelper {
 
                 scoreRow.setSessionTS(cursor.getString(0).replace("\"", ""));
                 scoreRow.setCategory(cursor.getString(1).replace("\"", ""));
-                scoreRow.setQuiz_length(Integer.valueOf(cursor.getString(2).replace("\"", "")));
-                scoreRow.setCorrect_percent(Double.valueOf(cursor.getString(3).replace("\"", "")));
+                scoreRow.setQuizLength(Integer.valueOf(cursor.getString(2).replace("\"", "")));
+                scoreRow.setCorrectPercent(Double.valueOf(cursor.getString(3).replace("\"", "")));
                 scoreRow.setUsername(cursor.getString(4).replace("\"", ""));
-                scoreRow.setCorrect_percent(Double.valueOf(cursor.getString(5).replace("\"", "")));
+                scoreRow.setCorrectPercent(Double.valueOf(cursor.getString(5).replace("\"", "")));
 
                 // Adding score to list
                 scoreList.add(scoreRow);
@@ -112,7 +112,6 @@ public class ScoreDAO extends SQLiteOpenHelper {
             db.execSQL(cleanSQL);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
         }
     }
 }

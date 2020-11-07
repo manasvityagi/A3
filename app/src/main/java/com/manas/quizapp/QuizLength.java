@@ -13,12 +13,13 @@ public class QuizLength extends AppCompatActivity {
     Button btnFullQuiz;
     final Integer FULL_QUIZ_LENGTH = 35;
     final Integer MINI_QUIZ_LENGTH = 10;
+    final String CATEGORY = "category";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_length);
-        String categoryPassedToThis = getIntent().getStringExtra("category");
+        String categoryPassedToThis = getIntent().getStringExtra(CATEGORY);
         Toast.makeText(this, categoryPassedToThis, Toast.LENGTH_LONG).show();
 
         btnMiniQuiz = findViewById(R.id.mini_quiz);
@@ -29,7 +30,7 @@ public class QuizLength extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(QuizLength.this, QuizActivity.class);
                 intent.putExtra("quiz_length", MINI_QUIZ_LENGTH);
-                intent.putExtra("category", categoryPassedToThis);
+                intent.putExtra(CATEGORY, categoryPassedToThis);
                 startActivity(intent);
             }
         });
@@ -39,7 +40,7 @@ public class QuizLength extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(QuizLength.this, QuizActivity.class);
                 intent.putExtra("quiz_length", FULL_QUIZ_LENGTH);
-                intent.putExtra("category", categoryPassedToThis);
+                intent.putExtra(CATEGORY, categoryPassedToThis);
                 startActivity(intent);
             }
         });
