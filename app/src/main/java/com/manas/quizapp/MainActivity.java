@@ -27,7 +27,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
     Button getMyRecord;
     Button updateQuestions;
-    final String QUESTION_LOCAL_FILE_NAME = "questions.json";
+    private static final String FIREBASE_URL = "https://static-pottery-289106.firebaseio.com/.json";
+    private static final String QUESTION_LOCAL_FILE_NAME = "questions.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         getMyRecord = findViewById(R.id.my_record);
         updateQuestions = findViewById(R.id.update_questions);
 
-        updateQuesFileInContext();
         startQuizBtn.setOnClickListener(v -> {
             // In runtime the app works on sqlite database
             populateDBfromJson();
@@ -63,25 +62,20 @@ public class MainActivity extends AppCompatActivity {
         updateQuestions.setOnClickListener(v -> {
             //pulls the latest question list and updates the local file
             //Updates only if there is an updated, otherwise does not overwrites the file
-          //  readQuestionFromContext();
-            nameOfLatestFile();
-            readAppSpecificFiles();
             updateQuestionsFromCloud();
         });
     }
 
-    //Read from context, read from asset. Whichever is latest copy that to context.
-    private void updateQuesFileInContext() {
-        String contextFileContent = readQuestionFromAssets();
-        String assetFileContent = readQuestionFromAssets();
-
-    }
 
 
     public void updateQuestionsFromCloud() {
+        //1. Make sure file exists in Assets
+        //2. Make sure file exists in Context
+        //3. If file does not exists in context, copy it from assets to context.
+        //4. Get firebase response, if response is different from local file in context, update the local context
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://static-pottery-289106.firebaseio.com/.json";
+        String url = FIREBASE_URL;
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -89,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         response = response.replace("\n", "").replace("\r", "");
-                        String fileContent = readQuestionFromAssets()
+                        String fileContent = readQuestionFromContext()
                                 .replace("\n", "")
                                 .replace("\r", "")
                                 .replace("\t", "");
@@ -97,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                         if (response.equals(fileContent)) {
                             Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
                         } else {
-                            writeToFile(response);
+                            writeFileToContext(response);
                             Toast.makeText(MainActivity.this, "Questions Updated", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -107,25 +101,17 @@ public class MainActivity extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
-
-    private void writeToFile(String data) {
+    private void writeFileToContext(String data) {
         Context context = getApplicationContext();
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(QUESTION_LOCAL_FILE_NAME, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
-
         } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
     }
 
-    void readAppSpecificFiles() {
-        File file = new File(getApplicationContext().getFilesDir(), QUESTION_LOCAL_FILE_NAME);
-        String p = file.getName();
-        p = file.getPath();
-        String[] kasd = file.list();
-    }
 
     private String readQuestionFromAssets() {
         String tContents = "";
@@ -140,9 +126,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             // Handle exceptions here
         }
-
         return tContents;
     }
+
 
     private String readQuestionFromContext() {
         String tContents = "";
@@ -204,40 +190,40 @@ public class MainActivity extends AppCompatActivity {
         return arrQuestions;
     }
 
-    public static boolean isJson(String Json) {
-        Gson gson = new Gson();
-        try {
-            gson.fromJson(Json, Object.class);
-            Object jsonObjType = gson.fromJson(Json, Object.class).getClass();
-            return !jsonObjType.equals(String.class);
-        } catch (com.google.gson.JsonSyntaxException ex) {
-            return false;
-        }
-    }
+//    public static boolean isJson(String Json) {
+//        Gson gson = new Gson();
+//        try {
+//            gson.fromJson(Json, Object.class);
+//            Object jsonObjType = gson.fromJson(Json, Object.class).getClass();
+//            return !jsonObjType.equals(String.class);
+//        } catch (com.google.gson.JsonSyntaxException ex) {
+//            return false;
+//        }
+//    }
 
-    private String nameOfLatestFile() {
-        Context cntxt = getApplicationContext();
-        File allFiles = cntxt.getApplicationContext().getFilesDir();
-        try {
-            cntxt.getApplicationContext().getAssets().open(QUESTION_LOCAL_FILE_NAME);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Date latestLastModDate = new Date(0);
-        String mostUpdatedFileName = "questions.json";
-
-        for (String strFile : allFiles.list()) {
-            File f = cntxt.getFileStreamPath(strFile);
-            Date lastModDateNew = new Date(f.lastModified());
-            if (lastModDateNew.after(latestLastModDate)) {
-                mostUpdatedFileName = f.getName();
-            }
-            Log.e("app", "most_updated_file_name : " + mostUpdatedFileName);
-        }
-
-        //return mostUpdatedFileName;
-        return "questions.json";
-    }
+//    private String nameOfLatestFile() {
+//        Context cntxt = getApplicationContext();
+//        File allFiles = cntxt.getApplicationContext().getFilesDir();
+//        try {
+//            cntxt.getApplicationContext().getAssets().open(QUESTION_LOCAL_FILE_NAME);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        Date latestLastModDate = new Date(0);
+//        String mostUpdatedFileName = "questions.json";
+//
+//        for (String strFile : allFiles.list()) {
+//            File f = cntxt.getFileStreamPath(strFile);
+//            Date lastModDateNew = new Date(f.lastModified());
+//            if (lastModDateNew.after(latestLastModDate)) {
+//                mostUpdatedFileName = f.getName();
+//            }
+//            Log.e("app", "most_updated_file_name : " + mostUpdatedFileName);
+//        }
+//
+//        //return mostUpdatedFileName;
+//        return "questions.json";
+//    }
 
 
 }
