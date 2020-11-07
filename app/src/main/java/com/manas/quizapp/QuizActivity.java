@@ -1,11 +1,8 @@
 package com.manas.quizapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.RecoverySystem;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,11 +11,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.manas.quizapp.models.QuizDAO;
 import com.manas.quizapp.models.QuizQuestionsModel;
-
 import java.util.List;
+
 
 public class QuizActivity extends AppCompatActivity {
     SQLiteDatabase dbHandler = null;
@@ -35,6 +32,7 @@ public class QuizActivity extends AppCompatActivity {
     ProgressBar progressBar;
     int quizQuesLength;
     int currentScore = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +64,14 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onPostResume() {
         Toast.makeText(QuizActivity.this,
                 "Resumed!!!!!!!!!!", Toast.LENGTH_SHORT).show();
         super.onPostResume();
     }
+
 
     private void loadQuestionOnUI(QuizQuestionsModel individualQuestions) {
         Log.e("app", "Question Statement " + individualQuestions.getQuestionStatement());
@@ -83,6 +83,7 @@ public class QuizActivity extends AppCompatActivity {
         radioOption4.setText(individualQuestions.getOption4());
     }
 
+
     private void checkAnswerAndScore(QuizQuestionsModel individualQuestions, String selectedAnswer) {
         if (individualQuestions.getCorrectOptionNumber().equals(selectedAnswer)) {
             Log.e("app", "Correct Answer Selected");
@@ -91,6 +92,7 @@ public class QuizActivity extends AppCompatActivity {
             Log.e("app", "Wrong Answer Selected");
         }
     }
+
 
     private List<QuizQuestionsModel> getQuestionList() {
         Bundle bundle = getIntent().getExtras();
@@ -104,6 +106,7 @@ public class QuizActivity extends AppCompatActivity {
 
         return questionList;
     }
+
 
     private void setupUI() {
         setContentView(R.layout.activity_quiz);

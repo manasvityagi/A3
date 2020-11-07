@@ -1,7 +1,6 @@
 package com.manas.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;

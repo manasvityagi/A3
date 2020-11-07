@@ -1,7 +1,6 @@
 package com.manas.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +10,9 @@ import android.widget.Toast;
 public class QuizLength extends AppCompatActivity {
     Button btnMiniQuiz;
     Button btnFullQuiz;
-    final Integer FULL_QUIZ_LENGTH = 35;
-    final Integer MINI_QUIZ_LENGTH = 10;
-    final String CATEGORY = "category";
+    final static Integer FULL_QUIZ_LENGTH = 35;
+    final static Integer MINI_QUIZ_LENGTH = 10;
+    final static String CATEGORY = "category";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

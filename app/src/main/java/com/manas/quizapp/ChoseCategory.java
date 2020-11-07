@@ -1,14 +1,13 @@
 package com.manas.quizapp;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.manas.quizapp.models.CategoryItemModel;
 
-public class ChoseCategory extends AppCompatActivity {
 
+public class ChoseCategory extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

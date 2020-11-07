@@ -60,6 +60,7 @@ public class QuizDAO extends SQLiteOpenHelper {
         super(context, DATAFILE_NAME, null, 1);
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -67,6 +68,7 @@ public class QuizDAO extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sql);
 
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
