@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     public void updateQuestionsFromCloud() {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://static-pottery-289106.firebaseio.com/.json";
+        String url = getResources().getString(R.string.firebase_database_url);
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
