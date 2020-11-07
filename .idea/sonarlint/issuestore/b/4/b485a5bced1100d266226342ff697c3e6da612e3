@@ -1,7 +1,3 @@
 
-U
-java:S1481":Remove this unused "scoreObjectsArrayList" local variable.(úÆ´ó8¥ıÉó×.
-a
-java:S2095"FUse try-with-resources or close this "ScoreDAO" in a "finally" clause.(›”ëÜ8íø’ü×.
-d
-java:S1854"IRemove this useless assignment to local variable "scoreObjectsArrayList".(úÆ´ó8¥ıÉó×.
+c
+java:S2095"FUse try-with-resources or close this "ScoreDAO" in a "finally" clause.(›”ëÜ8íø’ü×.

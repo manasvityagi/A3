@@ -1,14 +1,13 @@
 
+X
+java:S1128"6Remove this unused import 'android.os.RecoverySystem'.(ý¨Ž¦üÿÿÿÿ8Í¶üØÙ.
+†
+java:S1488g"dImmediately return this expression instead of assigning it to the temporary variable "questionList".(’›€Ãþÿÿÿÿ8Û™¦¾×.
+b
+java:S2095f"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8™Çø—×.
+e
+java:S1854a"HRemove this useless assignment to local variable "categoryPassedToThis".(Ÿÿ·æ8É‰»™×.
 J
 java:S1604."(Make this anonymous inner class a lambda(ŽÐ˜ðúÿÿÿÿ8Ç€ø”×.
 b
-java:S2095f"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8™Çø—×.
-b
 java:S1117g"@Rename "questionList" which hides the field declared at line 25.(’›€Ãþÿÿÿÿ8Û™¦¾×.
-†
-java:S1488g"dImmediately return this expression instead of assigning it to the temporary variable "questionList".(’›€Ãþÿÿÿÿ8Û™¦¾×.
-V	java:S110"<This class has 9 parents which is greater than 5 authorized.(ä¥Éïûÿÿÿÿ
-e
-java:S1854a"HRemove this useless assignment to local variable "categoryPassedToThis".(Ÿÿ·æ8É‰»™×.
-X
-java:S1128"6Remove this unused import 'android.os.RecoverySystem'.(ý¨Ž¦üÿÿÿÿ8Í¶üØÙ.

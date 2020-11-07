@@ -1,66 +1,26 @@
 
-H
-java:S1135¾"2Complete the task associated to this TODO comment.(™øşL
-C
-java:S16048"(Make this anonymous inner class a lambda(ŞÊ”µüÿÿÿÿ
-c
-java:S2095š"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8ìø’ü×.
-
-java:S1186É"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßüô‹şÿÿÿÿ
-]	java:S1257"<This block of commented-out lines of code should be removed.( ˜Şßÿÿÿÿÿ8ÇıüÇ×.
-˜
-java:S1186µ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îá¥„
-I
-java:S1135¹"2Complete the task associated to this TODO comment.(Íàş¡
-R	java:S125¿"<This block of commented-out lines of code should be removed.(¬«íû
-E
-java:S1604A"(Make this anonymous inner class a lambda(±»ìÊ8ÜªÑ×.
-
-java:S1186º"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ëı‰ºÿÿÿÿÿ
-N
-java:S1135´"2Complete the task associated to this TODO comment.(˜³ÖÆûÿÿÿÿ
-N
-java:S1135È"2Complete the task associated to this TODO comment.(­”æ²úÿÿÿÿ
-U
-java:S3400±"9Remove this method and declare a constant for this value.(Ö§”Óşÿÿÿÿ
-f
-java:S2674Ô"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ
-U
-java:S4719×"9Replace charset name argument with StandardCharsets.UTF_8(Šñäƒüÿÿÿÿ
-l
-java:S2095Ñ"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ8Í¶üØÙ.
-X	java:S110'"<This class has 9 parents which is greater than 5 authorized.(²Ú±8Í¶üØÙ.
-r	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÂ¶şÿÿÿÿ8Í¶üØÙ.
+r
+java:S2095z"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(ï­Ìöşÿÿÿÿ8¿‘°úÙ.
+Z
+java:S2589Œ"7Remove this expression which always evaluates to "true"(¦·úÓøÿÿÿÿ8¿‘°úÙ.
+Z
+java:S1854R"8Remove this useless assignment to local variable "diff".(‚ÿ¥ûùÿÿÿÿ8’÷äúÙ.
+X
+java:S1128";Remove this unused import 'com.android.volley.VolleyError'.(­°Ñ”8•Œ÷ùÙ.
+j
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ŠËÌî8¿‘°úÙ.
+s	java:S117Á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÂ¶şÿÿÿÿ8¿‘°úÙ.
 J
-java:S1604J"(Make this anonymous inner class a lambda(›¯¤ûùÿÿÿÿ8Í¶üØÙ.
-E
-java:S1604~"(Make this anonymous inner class a lambda(Ãºíõ8Í¶üØÙ.
-E
-java:S1604‰"(Make this anonymous inner class a lambda(²» g8Í¶üØÙ.
-`
-java:S1128">Remove this unused import 'com.manas.quizapp.models.ScoreDAO'.(—ØÌÀşÿÿÿÿ8Í¶üØÙ.
-U
-java:S1128"8Remove this unused import 'androidx.annotation.NonNull'.(ˆÛúÜ8Í¶üØÙ.
-h
-java:S1128"FRemove this unused import 'com.manas.quizapp.models.ScoreRecordModel'.(ÆÚûüÿÿÿÿ8Í¶üØÙ.
-U
-java:S1128"3Remove this unused import 'org.json.JSONException'.(¹Ó·úÿÿÿÿ8Í¶üØÙ.
-M
-java:S1128%"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Í¶üØÙ.
-`
-java:S1128">Remove this unused import 'org.jetbrains.annotations.NotNull'.(éš®ïøÿÿÿÿ8Í¶üØÙ.
-Q
-java:S1128"/Remove this unused import 'org.json.JSONArray'.(¬¸Ê’üÿÿÿÿ8Í¶üØÙ.
-X	java:S125E"<This block of commented-out lines of code should be removed.(ı©Ê8Í¶üØÙ.
-]
-java:S1854["@Remove this useless assignment to local variable "questionJson".(ôªĞö8Í¶üØÙ.
+java:S1604M"(Make this anonymous inner class a lambda(±æÿÚıÿÿÿÿ8ÑëÅùÙ.
 c
-java:S1126l"AReplace this if-then-else statement by a single return statement.(§™Ÿ½üÿÿÿÿ8Í¶üØÙ.
-w
-java:S2293˜"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜ÊÏŞ8Í¶üØÙ.
-?
-java:S1116™"Remove this empty statement.(Åñ­õşÿÿÿÿ8Í¶üØÙ.
-N
-java:S1481["1Remove this unused "questionJson" local variable.(ôªĞö8Í¶üØÙ.
-_
-java:S1144u"=Remove this unused private "getQuestionsFromFirebase" method.( ¯¬öÿÿÿÿÿ8Í¶üØÙ.
+java:S2095«"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8¿‘°úÙ.
+K
+java:S1481R")Remove this unused "diff" local variable.(‚ÿ¥ûùÿÿÿÿ8’÷äúÙ.
+I
+java:S1602?",Remove useless curly braces around statement(¿ÜƒÑ8µ¥êùÙ.
+l
+java:S2095Ğ"IUse try-with-resources or close this "InputStream" in a "finally" clause.(‘‡ŒÂûÿÿÿÿ8¿‘°úÙ.
+m
+java:S2674Ó"JCheck the return value of the "read" call to see how many bytes were read.(ë¥áïøÿÿÿÿ8¿‘°úÙ.
+P
+java:S1128".Remove this unused import 'android.view.View'.(Ø½­äşÿÿÿÿ8‡ˆöùÙ.

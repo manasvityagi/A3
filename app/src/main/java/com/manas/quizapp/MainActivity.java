@@ -32,6 +32,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -77,14 +78,13 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        String reply = response.replace("\n", "").replace("\r", "");
+                        response = response.replace("\n", "").replace("\r", "");
                         String latestFileContent = readFromFile(nameOfLatestFile()).replace("\n", "").replace("\r", "");
-                        String diff = StringUtils.difference(reply, latestFileContent);
 
-                        if (reply.equals(latestFileContent)) {
+                        if (response.equals(latestFileContent)) {
                             Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
                         } else {
-                            writeToFile(reply);
+                            writeToFile(response);
                             Toast.makeText(MainActivity.this, "Questions Updated" + nameOfLatestFile(), Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         return mostUpdatedFileName;
     }
 
-    private String writeToFile(String data) {
+    private void writeToFile(String data) {
         Context context = getApplicationContext();
         // base file name
         String fileName = "questions";
@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
             Log.e("Exception", "File write failed: " + e.toString());
         }
 
-        return fileName;
     }
 
     private String readFromFile(String fileName) {
@@ -160,9 +159,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    JsonObject[] populateDBfromJson() {
+    public JsonObject[] populateDBfromJson() {
 
-        String jsonFileString = getJsonFromAssets(nameOfLatestFile());
+        String jsonFileString = readFromFile(nameOfLatestFile());
         Gson gson = new Gson();
         JsonObject[] arrQuestions = gson.fromJson(jsonFileString, JsonObject[].class);
 
@@ -200,25 +199,5 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
-
-    String getJsonFromAssets(String fileName) {
-        String jsonString;
-        try {
-
-            InputStream is = MainActivity.this.getAssets().open(fileName);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-
-            jsonString = new String(buffer, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        return jsonString;
-    }
-
 
 }

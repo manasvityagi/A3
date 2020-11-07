@@ -36,7 +36,7 @@
         android:id="@+id/start_quiz_btn"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="24dp"
         android:text="Start Quiz"
         android:background="@drawable/rounded_corners"
         app:layout_constraintEnd_toEndOf="parent"

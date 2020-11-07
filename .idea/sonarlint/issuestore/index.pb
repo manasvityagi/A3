@@ -31,3 +31,7 @@ j
 :app/src/main/java/com/manas/quizapp/PastRecordAdapter.java,d\b\db71edbf8862b9ec55cafca446b61dfd218bfbaa
 d
 4app/src/main/java/com/manas/quizapp/ListAdapter.java,7\4\744f852a4433fb9f4c95af21a402522a85a89035
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+f
+6app/src/main/java/com/manas/quizapp/ChoseCategory.java,8\4\84598ef00c8dd489932a456cfb543f6c2fcff65f

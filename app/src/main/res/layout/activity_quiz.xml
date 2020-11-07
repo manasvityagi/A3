@@ -61,6 +61,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/QuestionStatement">
@@ -68,7 +69,7 @@
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="390dp"
-            android:layout_height="75dp"
+            android:layout_height="65dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:text="Option 1"
@@ -79,8 +80,8 @@
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="390dp"
-            android:layout_height="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:text="Option 2"
@@ -90,8 +91,8 @@
 
         <RadioButton
             android:id="@+id/radioButton3"
-            android:layout_width="390dp"
-            android:layout_height="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:text="Option 3"
@@ -101,8 +102,8 @@
 
         <RadioButton
             android:id="@+id/radioButton4"
-            android:layout_width="390dp"
-            android:layout_height="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:text="Option 4"
@@ -117,7 +118,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="6dp"
         android:background="@drawable/rounded_corners"
         android:text="submit"
         app:layout_constraintBottom_toBottomOf="parent"
