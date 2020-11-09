@@ -5,16 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.manas.quizapp.models.ScoreRecordModel;
+
 import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 
 public class PastRecordAdapter extends RecyclerView.Adapter<PastRecordAdapter.MyViewHolder> {
 
-    List<ScoreRecordModel>  recordList;
+    List<ScoreRecordModel> recordList;
 
     public PastRecordAdapter(List<ScoreRecordModel> scoreList) {
         this.recordList = scoreList;

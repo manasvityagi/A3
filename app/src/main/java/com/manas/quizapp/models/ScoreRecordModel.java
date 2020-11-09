@@ -1,5 +1,7 @@
 package com.manas.quizapp.models;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ScoreRecordModel {
     String username;
     String sessionTS;
@@ -69,6 +71,7 @@ public class ScoreRecordModel {
         this.correctPercent = correctPercent;
     }
 
+    @NotNull
     @Override
     public String toString() {
         return "ScoreRecordModel{" +

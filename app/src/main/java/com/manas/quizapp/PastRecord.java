@@ -1,11 +1,14 @@
 package com.manas.quizapp;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.os.Bundle;
+
 import com.manas.quizapp.models.ScoreDAO;
 import com.manas.quizapp.models.ScoreRecordModel;
+
 import java.util.List;
 
 

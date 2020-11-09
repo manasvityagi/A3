@@ -19,15 +19,15 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/play_fair_regular"
+            android:fontFamily="@font/cambay"
             android:text="Final Score"
+            android:textAlignment="center"
             android:textColor="@color/mud_yellow"
-            android:textSize="65dp"
-           />
+            android:textSize="70dp" />
     </FrameLayout>
 
     <TextView

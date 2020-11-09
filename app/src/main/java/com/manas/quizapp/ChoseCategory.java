@@ -1,9 +1,11 @@
 package com.manas.quizapp;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.manas.quizapp.models.CategoryItemModel;
 
 
@@ -18,7 +20,7 @@ public class ChoseCategory extends AppCompatActivity {
     }
 
     private void setRecycler() {
-        CategoryItemModel[] myListData = new CategoryItemModel[] {
+        CategoryItemModel[] myListData = new CategoryItemModel[]{
                 new CategoryItemModel("Core", android.R.drawable.ic_dialog_map),
                 new CategoryItemModel("Behaviour", android.R.drawable.ic_dialog_alert),
                 new CategoryItemModel("Courtesy Rules", android.R.drawable.ic_dialog_info),
