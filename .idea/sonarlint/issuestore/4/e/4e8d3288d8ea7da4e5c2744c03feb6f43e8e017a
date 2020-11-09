@@ -1,13 +1,8 @@
 
+b
+java:S1117j"@Rename "questionList" which hides the field declared at line 22.(’›€Ãþÿÿÿÿ8îƒöîÚ.
 †
-java:S1488g"dImmediately return this expression instead of assigning it to the temporary variable "questionList".(’›€Ãþÿÿÿÿ8Û™¦¾×.
+java:S1488j"dImmediately return this expression instead of assigning it to the temporary variable "questionList".(’›€Ãþÿÿÿÿ8îƒöîÚ.
+z	java:S116""^Rename this field "last_question_index" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç—Æö8îƒöîÚ.
 b
-java:S2095f"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8™Çø—×.
-b
-java:S1117g"@Rename "questionList" which hides the field declared at line 25.(’›€Ãþÿÿÿÿ8Û™¦¾×.
-e
-java:S1854a"HRemove this useless assignment to local variable "categoryPassedToThis".(Ÿÿ·æ8É‰»™×.
-J
-java:S1604."(Make this anonymous inner class a lambda(ŽÐ˜ðúÿÿÿÿ8Ç€ø”×.
-X
-java:S1128"6Remove this unused import 'android.os.RecoverySystem'.(ý¨Ž¦üÿÿÿÿ8Í¶üØÙ.
+java:S2095i"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8îƒöîÚ.

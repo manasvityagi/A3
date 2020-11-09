@@ -1,14 +1,8 @@
 
-C
-java:S1604"(Make this anonymous inner class a lambda(ÚÈÁÉûÿÿÿÿ
-<
-java:S1170"!Make this final field static too.(•¹ËÃùÿÿÿÿ
-P	java:S110"<This class has 9 parents which is greater than 5 authorized.(»ö÷
+e
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ßªÆ‚ûÿÿÿÿ8åˆ©Ú.
+[	java:S125"<This block of commented-out lines of code should be removed.(¿“’ÿÿÿÿÿ8¶ÕéÚ.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(íÇ§Ç8åˆ©Ú.
 _
-java:S1192"IDefine a constant instead of duplicating this literal "category" 3 times.(Ÿÿ·æ
-o	java:S116"[Rename this field "MINI_QUIZ_LENGTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ÖŸm
-u	java:S116"[Rename this field "FULL_QUIZ_LENGTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¹ËÃùÿÿÿÿ
-6
-java:S1170"!Make this final field static too.(¼ÖŸm
-C
-java:S1604%"(Make this anonymous inner class a lambda(úÏ·¸ÿÿÿÿÿ
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(÷€üj8åˆ©Ú.

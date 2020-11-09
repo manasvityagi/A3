@@ -1,44 +1,81 @@
 
-r	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õö¢øÿÿÿÿ
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(á£¿£ùÿÿÿÿ
-m	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(£ß…š
-Y
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ù²Ù©
-Y
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(™¡ñ‘
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜®»ùıÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(„±öÃ8¨ÑÑ‚×.
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(È†‚æùÿÿÿÿ
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(©‚ Ûÿÿÿÿÿ
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(†óÚõüÿÿÿÿ
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Û‹Ãƒùÿÿÿÿ
-Y
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‘÷†¡
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(õö¢øÿÿÿÿ
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ö«„ûÿÿÿÿ
-X
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¹¥‰
-[	java:S125"<This block of commented-out lines of code should be removed.(Š¯ø¾úÿÿÿÿ8‘õĞ‚×.
-s
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿ¼®:8Ş¥öšØ.
-C	java:S108")Either remove or fill this block of code.(Úîø›8¢İøšØ.
-
-java:S1319"vThe type of the "questionArr" object should be an interface such as "List" rather than the implementation "ArrayList".(§ˆ‘Ïıÿÿÿÿ
-\
-java:S1192"HDefine a constant instead of duplicating this literal " text, " 8 times.(ê§ËÙ
-Y
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(£ß…š
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ù²Ù©
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(«Ğüáüÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(á£¿£ùÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‘÷†¡
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¯²¿«
+Z
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¹¥‰
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(†óÚõüÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(™¡ñ‘
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(©‚ Ûÿÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(È†‚æùÿÿÿÿ
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(—¸Å 8Ëˆ©Ú.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ö«„ûÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Û‹Ãƒùÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜®»ùıÿÿÿÿ
+˜
+java:S1319S"vThe type of the "questionArr" object should be an interface such as "List" rather than the implementation "ArrayList".(§ˆ‘Ïıÿÿÿÿ8ÊÿõîÚ.
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷²ÕŞ8ÊÿõîÚ.
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÌ“Çıÿÿÿÿ8ÊÿõîÚ.
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÎêÑûÿÿÿÿ8ÊÿõîÚ.
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¡©å8ÊÿõîÚ.
+n	java:S117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø›üà8ÊÿõîÚ.
+s	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…äØÎûÿÿÿÿ8ÊÿõîÚ.
+s	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ØœÁÿÿÿÿÿ8ÊÿõîÚ.
+s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Á©óøÿÿÿÿ8ÊÿõîÚ.
+n	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞÙØ„8ÊÿõîÚ.
+n	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë·Š¡8ÊÿõîÚ.
+s	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥ÅŒıÿÿÿÿ8ÊÿõîÚ.
+a
+java:S1124/"EReorder the modifiers to comply with the Java Language Specification.(ã£»]8ÊÿõîÚ.
+]	java:S125-"<This block of commented-out lines of code should be removed.(¸Ç—Óşÿÿÿÿ8ÊÿõîÚ.
+d
+java:S1854—"ARemove this useless assignment to local variable "userRating_10".(¥ÅŒıÿÿÿÿ8ÊÿõîÚ.
+d
+java:S1854–"FRemove this useless assignment to local variable "questionCategory_9".(ë·Š¡8ÊÿõîÚ.
+Z
+java:S1854•"<Remove this useless assignment to local variable "picUrl_8".(ŞÙØ„8ÊÿõîÚ.
+`
+java:S1854’"=Remove this useless assignment to local variable "option6_5".(…äØÎûÿÿÿÿ8ÊÿõîÚ.
+[
+java:S1854‘"=Remove this useless assignment to local variable "option5_4".(Ø›üà8ÊÿõîÚ.
+[
+java:S1854"=Remove this useless assignment to local variable "option4_3".(Î¡©å8ÊÿõîÚ.
+`
+java:S1854"=Remove this useless assignment to local variable "option3_2".(ĞÎêÑûÿÿÿÿ8ÊÿõîÚ.
+`
+java:S1854"=Remove this useless assignment to local variable "option2_1".(òÌ“Çıÿÿÿÿ8ÊÿõîÚ.
+[
+java:S1854"=Remove this useless assignment to local variable "option1_0".(÷²ÕŞ8ÊÿõîÚ.
+L
+java:S1481".Remove this unused "option1_0" local variable.(÷²ÕŞ8ÊÿõîÚ.
 Q
-java:S1153"1Directly append the argument of String.valueOf().(š§òÅÿÿÿÿÿ8Ş¥öšØ.
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(«Ğüáüÿÿÿÿ
-Y
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¯²¿«
+java:S1481".Remove this unused "option2_1" local variable.(òÌ“Çıÿÿÿÿ8ÊÿõîÚ.
+Q
+java:S1481".Remove this unused "option3_2" local variable.(ĞÎêÑûÿÿÿÿ8ÊÿõîÚ.
+L
+java:S1481".Remove this unused "option4_3" local variable.(Î¡©å8ÊÿõîÚ.
+L
+java:S1481‘".Remove this unused "option5_4" local variable.(Ø›üà8ÊÿõîÚ.
+Q
+java:S1481’".Remove this unused "option6_5" local variable.(…äØÎûÿÿÿÿ8ÊÿõîÚ.
+K
+java:S1481•"-Remove this unused "picUrl_8" local variable.(ŞÙØ„8ÊÿõîÚ.
+U
+java:S1481–"7Remove this unused "questionCategory_9" local variable.(ë·Š¡8ÊÿõîÚ.
+U
+java:S1481—"2Remove this unused "userRating_10" local variable.(¥ÅŒıÿÿÿÿ8ÊÿõîÚ.

@@ -21,6 +21,19 @@ public class PastRecord extends AppCompatActivity {
 
         ScoreDAO score = new ScoreDAO(getApplicationContext());
         score.createScoreTable();
+        //testScoreTable(score);
+
+        List<ScoreRecordModel> scoreList = score.getScore();
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        PastRecordAdapter adapter = new PastRecordAdapter(scoreList);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    private void testScoreTable(ScoreDAO score) {
         score.cleanDB();
 
         //String username, String sessionTS, String category, Integer score, Integer quiz_length, double correct_percent
@@ -37,14 +50,5 @@ public class PastRecord extends AppCompatActivity {
         score.insertScoreObject(obj3);
         score.insertScoreObject(obj4);
         score.insertScoreObject(obj5);
-
-        List<ScoreRecordModel> scoreList = score.getScore();
-
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        PastRecordAdapter adapter = new PastRecordAdapter(scoreList);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
-
     }
 }

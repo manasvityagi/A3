@@ -11,9 +11,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.manas.quizapp.models.QuizDAO;
 import com.manas.quizapp.models.QuizQuestionsModel;
+
 import java.util.List;
 
 
@@ -56,6 +59,7 @@ public class QuizActivity extends AppCompatActivity {
             if (currentQuestionPointer == last_question_index) {
                 Intent intent = new Intent(QuizActivity.this, FinalScore.class);
                 intent.putExtra("score", String.valueOf(currentScore));
+                intent.putExtra("category", getIntent().getStringExtra("category"));
                 startActivity(intent);
             } else {
                 currentQuestionPointer += 1;
