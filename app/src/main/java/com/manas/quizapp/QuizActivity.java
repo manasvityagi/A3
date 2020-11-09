@@ -126,7 +126,7 @@ public class QuizActivity extends AppCompatActivity {
         radioOption1.setSelected(true);
         //Load First Question
         loadQuestionOnUI(questionList.get(0));
-        currentQuestionPointer = 1;
+        currentQuestionPointer = 0;
     }
 
 
