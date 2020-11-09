@@ -20,6 +20,7 @@ public class FinalScore extends AppCompatActivity {
         Log.e("app", String.valueOf(scoreField));
         String score = getIntent().getStringExtra("score");
         scoreField.setText(score);
+        insertScore(score);
     }
 
 

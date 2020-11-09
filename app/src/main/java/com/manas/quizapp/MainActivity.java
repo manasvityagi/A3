@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
     Button getMyRecord;
     Button updateQuestions;
-    private final String FIREBASE_URL = getResources().getString(R.string.firebase_database_url);
-    private final String QUESTION_LOCAL_FILE_NAME = getResources().getString(R.string.question_file_name);
+    private static final String FIREBASE_URL = "https://static-pottery-289106.firebaseio.com/.json";
+    private static final String QUESTION_LOCAL_FILE_NAME = "questions.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
             writeFileToContext(contentFromAssets);
             Toast.makeText(MainActivity.this, "Copied", Toast.LENGTH_SHORT).show();
         }
-    }
 
+    }
 
     private boolean doesFileExistsInContext() {
 
@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    
     public void updateQuestionsFromCloud() {
         //1. Make sure file exists in Assets
         //2. Make sure file exists in Context
