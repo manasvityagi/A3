@@ -29,7 +29,6 @@ import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-
 public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
     Button getMyRecord;
@@ -93,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }, error -> Log.e("app", "That didn't work!"));
-
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
@@ -131,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private String readQuestionFromContext() {
+
         String tContents = "";
         String[] fileList = getApplicationContext().fileList();
 
@@ -139,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             fis = getApplicationContext().openFileInput(QUESTION_LOCAL_FILE_NAME);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            return "Exception reading file from context";
+            return readQuestionFromAssets();
         }
         InputStreamReader inputStreamReader =
                 new InputStreamReader(fis, StandardCharsets.UTF_8);
@@ -160,9 +159,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     public JsonObject[] populateDBfromJson() {
 
-        String jsonFileString = readQuestionFromAssets();
+        String jsonFileString = readQuestionFromContext();
         Gson gson = new Gson();
         JsonObject[] arrQuestions = gson.fromJson(jsonFileString, JsonObject[].class);
 

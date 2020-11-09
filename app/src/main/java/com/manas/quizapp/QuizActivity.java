@@ -61,7 +61,6 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
 
@@ -85,11 +84,14 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void checkAnswerAndScore(QuizQuestionsModel individualQuestions, String selectedAnswer) {
-        if (individualQuestions.getCorrectOptionNumber().equals(selectedAnswer)) {
+        String correctAnswer = individualQuestions.getCorrectOptionNumber();
+        if (correctAnswer.equals(selectedAnswer)) {
             Log.e("app", "Correct Answer Selected");
+            Toast.makeText(QuizActivity.this,"Wrong Answer", Toast.LENGTH_SHORT).show();
             currentScore = currentScore + 10;
         } else {
             Log.e("app", "Wrong Answer Selected");
+            Toast.makeText(QuizActivity.this,"Correct Answer", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -97,7 +99,7 @@ public class QuizActivity extends AppCompatActivity {
     private List<QuizQuestionsModel> getQuestionList() {
         Bundle bundle = getIntent().getExtras();
         String categoryPassedToThis = getIntent().getStringExtra("category");
-        categoryPassedToThis = "courtesy";
+
         this.quizQuesLength = bundle.getInt("quiz_length");
 
         // Open database handler using our own specialized CustomerDatabaseHelper
