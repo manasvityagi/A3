@@ -3,12 +3,9 @@ package com.manas.quizapp;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.manas.quizapp.models.ScoreDAO;
 import com.manas.quizapp.models.ScoreRecordModel;
-
 import java.util.Calendar;
 import java.util.Date;
 
