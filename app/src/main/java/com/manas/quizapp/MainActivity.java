@@ -94,10 +94,9 @@ public class MainActivity extends AppCompatActivity {
         //4. Get firebase response, if response is different from local file in context, update the local context
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = FIREBASE_URL;
 
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, FIREBASE_URL,
                 response -> {
                     response = response.replace("\n", "").replace("\r", "");
                     String fileContent = readQuestionFromContext()
@@ -125,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
             outputStreamWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
         }
 
     }
@@ -151,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
     private String readQuestionFromContext() {
 
         String tContents;
-        String[] fileList = getApplicationContext().fileList();
 
         FileInputStream fis = null;
         try {
@@ -178,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public JsonObject[] populateDBfromJson() {
+    public void populateDBfromJson() {
 
         String jsonFileString = readQuestionFromContext();
         Gson gson = new Gson();
@@ -206,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
 
         helper.insertQuestionObject(qArray);
         helper.close();
-        return arrQuestions;
     }
 
 //    public static boolean isJson(String Json) {

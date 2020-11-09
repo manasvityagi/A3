@@ -11,12 +11,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.manas.quizapp.models.QuizDAO;
 import com.manas.quizapp.models.QuizQuestionsModel;
-
 import java.util.List;
 
 
@@ -97,7 +94,6 @@ public class QuizActivity extends AppCompatActivity {
             Log.e("app", "Wrong Answer Selected");
             Toast.makeText(QuizActivity.this, "Wrong: " + currentScore, Toast.LENGTH_SHORT).show();
         }
-
     }
 
 

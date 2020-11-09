@@ -16,7 +16,6 @@ public class ChoseCategory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category);
         setRecycler();
-
     }
 
     private void setRecycler() {
