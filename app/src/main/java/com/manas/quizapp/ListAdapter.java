@@ -50,6 +50,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return listData.length;
     }
 
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;

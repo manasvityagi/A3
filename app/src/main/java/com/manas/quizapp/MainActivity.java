@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button startQuizBtn;
     Button getMyRecord;
     Button updateQuestions;
-    private static final String FIREBASE_URL = "https://static-pottery-289106.firebaseio.com/.json";
-    private static final String QUESTION_LOCAL_FILE_NAME = "questions.json";
+    private  final String FIREBASE_URL = getResources().getString(R.string.firebase_database_url);
+    private  final String QUESTION_LOCAL_FILE_NAME = getResources().getString(R.string.question_file_name);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
