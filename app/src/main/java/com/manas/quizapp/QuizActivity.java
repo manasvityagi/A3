@@ -129,7 +129,6 @@ public class QuizActivity extends AppCompatActivity {
 
         //Load First Question
         loadQuestionOnUI(questionList.get(currentQuestionPointer));
-
     }
 
 
