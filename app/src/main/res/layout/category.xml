@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="25dp"
-        />
+        android:layout_marginTop="25dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

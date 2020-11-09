@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void makeSureQuestionFileIsOK() {
         //check if file exists in context
-        if(!doesFileExistsInContext()){
+        if (!doesFileExistsInContext()) {
             //copy file from assets to context
             String contentFromAssets = readQuestionFromAssets();
             writeFileToContext(contentFromAssets);
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private boolean doesFileExistsInContext(){
+    private boolean doesFileExistsInContext() {
         String[] fileList = getApplicationContext().fileList();
         FileInputStream fis = null;
         try {
@@ -99,21 +98,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        response = response.replace("\n", "").replace("\r", "");
-                        String fileContent = readQuestionFromContext()
-                                .replace("\n", "")
-                                .replace("\r", "")
-                                .replace("\t", "");
+                response -> {
+                    response = response.replace("\n", "").replace("\r", "");
+                    String fileContent = readQuestionFromContext()
+                            .replace("\n", "")
+                            .replace("\r", "")
+                            .replace("\t", "");
 
-                        if (response.equals(fileContent)) {
-                            Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
-                        } else {
-                            writeFileToContext(response);
-                            Toast.makeText(MainActivity.this, "Questions Updated", Toast.LENGTH_SHORT).show();
-                        }
+                    if (response.equals(fileContent)) {
+                        Toast.makeText(MainActivity.this, "No Updates Available", Toast.LENGTH_SHORT).show();
+                    } else {
+                        writeFileToContext(response);
+                        Toast.makeText(MainActivity.this, "Questions Updated", Toast.LENGTH_SHORT).show();
                     }
                 }, error -> Log.e("app", "That didn't work!"));
         // Add the request to the RequestQueue.
@@ -154,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String readQuestionFromContext() {
 
-        String tContents = "";
+        String tContents;
         String[] fileList = getApplicationContext().fileList();
 
         FileInputStream fis = null;
@@ -180,8 +176,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return tContents;
     }
-
-
 
 
     public JsonObject[] populateDBfromJson() {

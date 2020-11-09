@@ -104,7 +104,7 @@ public class ScoreDAO extends SQLiteOpenHelper {
         return scoreList;
     }
 
-    public void cleanDB(){
+    public void cleanDB() {
         SQLiteDatabase db = this.getWritableDatabase();
         String cleanSQL = "DELETE FROM " + TABLE;
 

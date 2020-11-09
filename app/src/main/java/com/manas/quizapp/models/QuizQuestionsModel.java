@@ -1,8 +1,6 @@
 package com.manas.quizapp.models;
 
 
-
-
 public class QuizQuestionsModel {
 
     public String option1;

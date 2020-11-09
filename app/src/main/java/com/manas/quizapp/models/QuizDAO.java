@@ -42,7 +42,7 @@ public class QuizDAO extends SQLiteOpenHelper {
             + QUESTION_CATEGORY + TEXT
             + RATING + " INTEGER "
             + ", PRIMARY KEY (questionStatement));";
-           // + RATING + " INTEGER );";
+    // + RATING + " INTEGER );";
 
     public final static String INSERT_BASE = " ("
             + OP1 + " , "
@@ -67,7 +67,7 @@ public class QuizDAO extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String sql = "CREATE TABLE " + TABLE + VALUES_BASE;
-        Log.e("app",sql);
+        Log.e("app", sql);
         sqLiteDatabase.execSQL(sql);
 
     }
@@ -105,16 +105,16 @@ public class QuizDAO extends SQLiteOpenHelper {
                 db.execSQL(insertQuery);
             } catch (SQLException e) {
                 e.printStackTrace();
-                Log.e("app",e.getMessage());
+                Log.e("app", e.getMessage());
             }
         }
-
         db.close();
     }
 
+
     private void makeSureDBexists() {
         String sql = "CREATE TABLE " + TABLE + VALUES_BASE;
-        Log.e("app",sql);
+        Log.e("app", sql);
         try {
             this.getWritableDatabase().execSQL(sql);
         } catch (SQLException e) {
@@ -138,6 +138,21 @@ public class QuizDAO extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 QuizQuestionsModel tempQuestion = new QuizQuestionsModel();
+                String option1_0 = cursor.getString(0).replace("\"", "");
+                String option2_1 = cursor.getString(1).replace("\"", "");
+                String option3_2 = cursor.getString(2).replace("\"", "");
+                String option4_3 = cursor.getString(3).replace("\"", "");
+                String option5_4 = cursor.getString(4).replace("\"", "");
+                String option6_5 = cursor.getString(5).replace("\"", "");
+                String questionStatement_6 = cursor.getString(6).replace("\"", "");
+                String correctOptionNumber_7 = cursor.getString(7).replace("\"", "");
+                String picUrl_8 = cursor.getString(8).replace("\"", "");
+                String questionCategory_9 = cursor.getString(9).replace("\"", "");
+                String userRating_10 = cursor.getString(10).replace("\"", "");
+
+                Log.e("app", "questionStatement_6: " + questionStatement_6);
+                Log.e("app", "correctOptionNumber_7: " + correctOptionNumber_7);
+
                 tempQuestion.setOption1(cursor.getString(0).replace("\"", ""));
                 tempQuestion.setOption2(cursor.getString(1).replace("\"", ""));
                 tempQuestion.setOption3(cursor.getString(2).replace("\"", ""));
