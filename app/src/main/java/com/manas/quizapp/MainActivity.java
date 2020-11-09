@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         getMyRecord = findViewById(R.id.my_record);
         updateQuestions = findViewById(R.id.update_questions);
 
+        makeSureQuestionFileIsOK();
+
         startQuizBtn.setOnClickListener(v -> {
             // In runtime the app works on sqlite database
             populateDBfromJson();
@@ -63,6 +65,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void makeSureQuestionFileIsOK() {
+        //check if file exists in context
+        if(!doesFileExistsInContext()){
+            //copy file from assets to context
+            String contentFromAssets = readQuestionFromAssets();
+            writeFileToContext(contentFromAssets);
+            Toast.makeText(MainActivity.this, "Copied", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private boolean doesFileExistsInContext(){
+        String[] fileList = getApplicationContext().fileList();
+        FileInputStream fis = null;
+        try {
+            fis = getApplicationContext().openFileInput(QUESTION_LOCAL_FILE_NAME);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
     public void updateQuestionsFromCloud() {
         //1. Make sure file exists in Assets
@@ -138,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
             fis = getApplicationContext().openFileInput(QUESTION_LOCAL_FILE_NAME);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            return readQuestionFromAssets();
         }
         InputStreamReader inputStreamReader =
                 new InputStreamReader(fis, StandardCharsets.UTF_8);

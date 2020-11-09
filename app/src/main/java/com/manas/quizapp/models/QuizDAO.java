@@ -40,7 +40,9 @@ public class QuizDAO extends SQLiteOpenHelper {
             + CORRECT_OPTION + TEXT
             + PICTURE_URL + TEXT
             + QUESTION_CATEGORY + TEXT
-            + RATING + " INTEGER );";
+            + RATING + " INTEGER "
+            + ", PRIMARY KEY (questionStatement));";
+           // + RATING + " INTEGER );";
 
     public final static String INSERT_BASE = " ("
             + OP1 + " , "
@@ -65,6 +67,7 @@ public class QuizDAO extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String sql = "CREATE TABLE " + TABLE + VALUES_BASE;
+        Log.e("app",sql);
         sqLiteDatabase.execSQL(sql);
 
     }
@@ -98,7 +101,12 @@ public class QuizDAO extends SQLiteOpenHelper {
             insertQuery = insertQuery.replace("URL", q.getPictureUrl());
             insertQuery = insertQuery.replace("QCX", q.getQuestionCategory());
 
-            db.execSQL(insertQuery);
+            try {
+                db.execSQL(insertQuery);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                Log.e("app",e.getMessage());
+            }
         }
 
         db.close();
@@ -106,7 +114,7 @@ public class QuizDAO extends SQLiteOpenHelper {
 
     private void makeSureDBexists() {
         String sql = "CREATE TABLE " + TABLE + VALUES_BASE;
-
+        Log.e("app",sql);
         try {
             this.getWritableDatabase().execSQL(sql);
         } catch (SQLException e) {
