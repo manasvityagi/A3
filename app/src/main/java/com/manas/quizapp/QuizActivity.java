@@ -34,32 +34,38 @@ public class QuizActivity extends AppCompatActivity {
     Button submitButton;
     ProgressBar progressBar;
     int quizQuesLength;
+    int last_question_index;
     int currentScore = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        this.quizQuesLength = getIntent().getExtras().getInt("quiz_length");
         this.questionList = getQuestionList();
+        if (this.questionList.size() <= quizQuesLength)
+            last_question_index = this.questionList.size() - 1;
         setupUI();
 
-        submitButton.setOnClickListener(v -> {
 
+        submitButton.setOnClickListener(v -> {
             // find the radiobutton by returned id
             selectedRadioButton = findViewById(quesRadioGroup.getCheckedRadioButtonId());
             String selectedAnswer = selectedRadioButton.getText().toString();
-            Toast.makeText(QuizActivity.this, selectedAnswer, Toast.LENGTH_SHORT).show();
 
             checkAnswerAndScore(questionList.get(currentQuestionPointer), selectedAnswer);
-            loadQuestionOnUI(questionList.get(currentQuestionPointer));
-            currentQuestionPointer += 1;
-            progressBar.setProgress(currentQuestionPointer * 10);
-            if (currentQuestionPointer == quizQuesLength) {
+
+            // Quiz Ends
+            if (currentQuestionPointer == last_question_index) {
                 Intent intent = new Intent(QuizActivity.this, FinalScore.class);
                 intent.putExtra("score", String.valueOf(currentScore));
                 startActivity(intent);
+            } else {
+                currentQuestionPointer += 1;
+                loadQuestionOnUI(questionList.get(currentQuestionPointer));
+                progressBar.setProgress(currentQuestionPointer * 10);
             }
+
         });
     }
 
@@ -85,19 +91,19 @@ public class QuizActivity extends AppCompatActivity {
         String correctAnswer = individualQuestions.getCorrectOptionNumber();
         if (correctAnswer.equals(selectedAnswer)) {
             Log.e("app", "Correct Answer Selected");
-            Toast.makeText(QuizActivity.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
             currentScore = currentScore + 10;
+            Toast.makeText(QuizActivity.this, "Correct :" + currentScore, Toast.LENGTH_SHORT).show();
         } else {
             Log.e("app", "Wrong Answer Selected");
-            Toast.makeText(QuizActivity.this, "Correct Answer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(QuizActivity.this, "Wrong: " + currentScore, Toast.LENGTH_SHORT).show();
         }
+
     }
 
 
     private List<QuizQuestionsModel> getQuestionList() {
-        Bundle bundle = getIntent().getExtras();
+
         String categoryPassedToThis = getIntent().getStringExtra("category");
-        this.quizQuesLength = bundle.getInt("quiz_length");
 
         // Open database handler using our own specialized CustomerDatabaseHelper
         QuizDAO helper = new QuizDAO(getApplicationContext());
@@ -122,8 +128,8 @@ public class QuizActivity extends AppCompatActivity {
         progressBar.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
         //Load First Question
-        loadQuestionOnUI(questionList.get(0));
-        currentQuestionPointer = 0;
+        loadQuestionOnUI(questionList.get(currentQuestionPointer));
+
     }
 
 
