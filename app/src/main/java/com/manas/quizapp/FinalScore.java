@@ -22,6 +22,7 @@ public class FinalScore extends AppCompatActivity {
         scoreField.setText(score);
     }
 
+
     private void insertScore(String scoreObtained) {
         ScoreDAO scoreDB = new ScoreDAO(getApplicationContext());
         //scoreDB.createScoreTable();
