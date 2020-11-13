@@ -1,3 +1,6 @@
 
+]	java:S125"<This block of commented-out lines of code should be removed.(÷¹€Ùùÿÿÿÿ8·“ÏŸÛ.
 c
 java:S2095"FUse try-with-resources or close this "ScoreDAO" in a "finally" clause.(›”ëÜ8íø’ü×.
+P
+java:S1144$"3Remove this unused private "testScoreTable" method.(ßœÖ•8·“ÏŸÛ.

@@ -1,21 +1,11 @@
 
-l
-java:S2095z"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(¤”²_8–‘ğäÚ.
-g
-java:S2095ˆ"IUse try-with-resources or close this "InputStream" in a "finally" clause.(Âåì8–‘ğäÚ.
 m
-java:S2674‹"JCheck the return value of the "read" call to see how many bytes were read.(¢Œ¡æşÿÿÿÿ8–‘ğäÚ.
-O
-java:S1481O"-Remove this unused "fileList" local variable.(ÏÆ‰œûÿÿÿÿ8–‘ğäÚ.
+java:S2674Š"JCheck the return value of the "read" call to see how many bytes were read.(¢Œ¡æşÿÿÿÿ8–‘ğäÚ.
+g
+java:S2095‡"IUse try-with-resources or close this "InputStream" in a "finally" clause.(Âåì8–‘ğäÚ.
+Y	java:S125Ï"<This block of commented-out lines of code should be removed.(‰½•“8–‘ğäÚ.
 I
 java:S1602<",Remove useless curly braces around statement(¿ÜƒÑ8µ¥êùÙ.
-^
-java:S1854O"<Remove this useless assignment to local variable "fileList".(ÏÆ‰œûÿÿÿÿ8–‘ğäÚ.
-Y	java:S125Ğ"<This block of commented-out lines of code should be removed.(‰½•“8–‘ğäÚ.
-Y	java:S125Û"<This block of commented-out lines of code should be removed.(º ¤Æ8–‘ğäÚ.
-o
-java:S2095R"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ËÇï…úÿÿÿÿ8ş“ïÚ.
-Y
-java:S1854R"7Remove this useless assignment to local variable "fis".(ËÇï…úÿÿÿÿ8ş“ïÚ.
-E
-java:S1481P"(Remove this unused "fis" local variable.(…Üê¦8ş“ïÚ.
+l
+java:S2095y"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(¤”²_8–‘ğäÚ.
+Y	java:S125Ú"<This block of commented-out lines of code should be removed.(º ¤Æ8–‘ğäÚ.
