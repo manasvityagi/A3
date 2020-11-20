@@ -74,7 +74,7 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     protected void onPostResume() {
         Toast.makeText(QuizActivity.this,
-                "Resumed!!!!!!!!!!", Toast.LENGTH_SHORT).show();
+                "Resumed!", Toast.LENGTH_SHORT).show();
         super.onPostResume();
     }
 

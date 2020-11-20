@@ -1,11 +1,11 @@
 
 m
 java:S2674Š"JCheck the return value of the "read" call to see how many bytes were read.(¢Œ¡æşÿÿÿÿ8–‘ğäÚ.
-g
-java:S2095‡"IUse try-with-resources or close this "InputStream" in a "finally" clause.(Âåì8–‘ğäÚ.
-Y	java:S125Ï"<This block of commented-out lines of code should be removed.(‰½•“8–‘ğäÚ.
-I
-java:S1602<",Remove useless curly braces around statement(¿ÜƒÑ8µ¥êùÙ.
 l
 java:S2095y"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(¤”²_8–‘ğäÚ.
 Y	java:S125Ú"<This block of commented-out lines of code should be removed.(º ¤Æ8–‘ğäÚ.
+Y	java:S125Ï"<This block of commented-out lines of code should be removed.(‰½•“8–‘ğäÚ.
+I
+java:S1602<",Remove useless curly braces around statement(¿ÜƒÑ8µ¥êùÙ.
+g
+java:S2095‡"IUse try-with-resources or close this "InputStream" in a "finally" clause.(Âåì8–‘ğäÚ.

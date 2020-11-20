@@ -8,6 +8,17 @@
     android:tint="#55ff0000"
     tools:context=".FinalScore">
 
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/rounded_corners"
+        android:text="Home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
@@ -39,11 +50,29 @@
         android:background="@drawable/harder_border"
         android:includeFontPadding="true"
         android:paddingStart="@dimen/default_gap"
-        android:text="TextView"
+        android:text="Score"
+        android:textAlignment="center"
         android:textSize="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintVertical_bias="0.347" />
+
+    <TextView
+        android:id="@+id/cpuTemprature"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="204dp"
+        android:background="@drawable/harder_border"
+        android:includeFontPadding="true"
+        android:paddingStart="@dimen/default_gap"
+        android:text="CPU Temprature"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.729" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

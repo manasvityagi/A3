@@ -1,10 +1,10 @@
 
-b
-java:S1117n"@Rename "questionList" which hides the field declared at line 25.(’›€Ãşÿÿÿÿ8îƒöîÚ.
-z	java:S116%"^Rename this field "last_question_index" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç—Æö8îƒöîÚ.
-b
-java:S2095m"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8îƒöîÚ.
 †
 java:S1488n"dImmediately return this expression instead of assigning it to the temporary variable "questionList".(’›€Ãşÿÿÿÿ8îƒöîÚ.
 f
 java:S1192>"IDefine a constant instead of duplicating this literal "category" 3 times.(®„üĞ8¹“ÏŸÛ.
+b
+java:S1117n"@Rename "questionList" which hides the field declared at line 25.(’›€Ãşÿÿÿÿ8îƒöîÚ.
+b
+java:S2095m"EUse try-with-resources or close this "QuizDAO" in a "finally" clause.(‰±¹­8îƒöîÚ.
+z	java:S116%"^Rename this field "last_question_index" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç—Æö8îƒöîÚ.
